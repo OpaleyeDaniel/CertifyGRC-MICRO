@@ -1,0 +1,310 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * CertifyGRC - Enterprise GRC Platform
+   * Professional, trust-inspiring color scheme for compliance & security
+   * HSL values for Tailwind integration
+  */
+  :root {
+    /* Backgrounds & Text */
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+
+    /* Primary - Professional Blue (Trust, Security) */
+    --primary: 213 93% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Slate Gray */
+    --secondary: 210 14% 44%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Success - Green (Compliance Ready) */
+    --success: 134 61% 41%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Amber (Gaps, Risks) */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive - Red (Critical) */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Muted */
+    --muted: 210 14% 92%;
+    --muted-foreground: 210 8% 40%;
+
+    /* Accent - Cyan (Highlights) */
+    --accent: 185 100% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 210 14% 88%;
+    --input: 210 14% 96%;
+    --ring: 213 93% 40%;
+
+    /* Sidebar */
+    --sidebar-background: 210 14% 97%;
+    --sidebar-foreground: 210 11% 25%;
+    --sidebar-primary: 213 93% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 100% 94%;
+    --sidebar-accent-foreground: 213 93% 40%;
+    --sidebar-border: 210 14% 88%;
+    --sidebar-ring: 213 93% 40%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    /* Dark Mode */
+    --background: 210 13% 9%;
+    --foreground: 210 14% 92%;
+
+    --card: 210 11% 12%;
+    --card-foreground: 210 14% 92%;
+
+    --popover: 210 11% 12%;
+    --popover-foreground: 210 14% 92%;
+
+    --primary: 213 93% 55%;
+    --primary-foreground: 210 13% 9%;
+
+    --secondary: 210 14% 60%;
+    --secondary-foreground: 210 13% 9%;
+
+    --success: 134 61% 48%;
+    --success-foreground: 210 13% 9%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 210 13% 9%;
+
+    --muted: 210 11% 25%;
+    --muted-foreground: 210 14% 65%;
+
+    --accent: 185 100% 50%;
+    --accent-foreground: 210 13% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 11% 20%;
+    --input: 210 11% 16%;
+    --ring: 213 93% 55%;
+
+    --sidebar-background: 210 11% 11%;
+    --sidebar-foreground: 210 14% 85%;
+    --sidebar-primary: 213 93% 55%;
+    --sidebar-primary-foreground: 210 13% 9%;
+    --sidebar-accent: 213 100% 20%;
+    --sidebar-accent-foreground: 213 93% 55%;
+    --sidebar-border: 210 11% 20%;
+    --sidebar-ring: 213 93% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: "Fira Code", monospace;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  h1 {
+    @apply text-3xl font-extrabold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-bold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl font-bold;
+  }
+
+  h4 {
+    @apply text-lg font-semibold;
+  }
+
+  h5 {
+    @apply text-base font-semibold;
+  }
+
+  h6 {
+    @apply text-sm font-semibold;
+  }
+}
+
+/* ==============================
+   Light / Dark CSS Variables
+   ============================== */
+
+:root,
+[data-theme="light"] {
+  --bg-primary: hsl(var(--background));
+  --bg-secondary: hsl(var(--sidebar-background));
+  --bg-tertiary: hsl(var(--background));
+  --text-primary: hsl(var(--foreground));
+  --text-secondary: hsl(var(--muted-foreground));
+  --text-tertiary: hsl(var(--muted-foreground) / 0.85);
+  --border-subtle: hsl(var(--border) / 0.22);
+  --border-medium: hsl(var(--border) / 0.32);
+  --color-info-bg: hsl(var(--primary) / 0.12);
+  --color-info-text: hsl(var(--primary));
+  --color-success-bg: hsl(var(--success) / 0.12);
+  --color-success-text: hsl(var(--success));
+  --color-danger-bg: hsl(var(--destructive) / 0.12);
+  --color-danger-text: hsl(var(--destructive));
+  --color-purple-bg: hsl(var(--accent) / 0.12);
+  --color-purple-text: hsl(var(--accent));
+  --color-teal-bg: hsl(var(--accent) / 0.10);
+  --color-teal-text: hsl(var(--accent));
+}
+
+[data-theme="dark"] {
+  --bg-primary: hsl(var(--background));
+  --bg-secondary: hsl(var(--sidebar-background));
+  --bg-tertiary: hsl(var(--background));
+  --text-primary: hsl(var(--foreground));
+  --text-secondary: hsl(var(--muted-foreground));
+  --text-tertiary: hsl(var(--muted-foreground) / 0.85);
+  --border-subtle: hsl(var(--border) / 0.22);
+  --border-medium: hsl(var(--border) / 0.32);
+  --color-info-bg: hsl(var(--primary) / 0.16);
+  --color-info-text: hsl(var(--primary));
+  --color-success-bg: hsl(var(--success) / 0.16);
+  --color-success-text: hsl(var(--success));
+  --color-danger-bg: hsl(var(--destructive) / 0.16);
+  --color-danger-text: hsl(var(--destructive));
+  --color-purple-bg: hsl(var(--accent) / 0.14);
+  --color-purple-text: hsl(var(--accent));
+  --color-teal-bg: hsl(var(--accent) / 0.12);
+  --color-teal-text: hsl(var(--accent));
+}
+
+/* ==============================
+   Shared Utility Classes
+   ============================== */
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 0.5px solid var(--border-medium);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  border-color: var(--color-info-text);
+  outline: none;
+}
+
+.form-input:disabled {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 0.5px solid hsl(var(--primary) / 0.45);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  cursor: pointer;
+  transition: opacity 0.15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  opacity: 0.82;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: 0.5px solid var(--border-medium);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.12s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-secondary);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
