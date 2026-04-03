@@ -167,21 +167,12 @@ export default function Evidence() {
   const remediationEvidence = useMemo(() => {
     const records: UnifiedEvidenceRecord[] = [];
 
-    console.log(`📁 remediationEvidence - Starting with ${remediations.length} remediations`);
-
     remediations.forEach((remediation) => {
-      console.log(`📁 Checking remediation ${remediation.nistId}:`, {
-        hasEvidenceFiles: !!remediation.evidenceFiles,
-        fileCount: remediation.evidenceFiles?.length || 0,
-        evidenceFiles: remediation.evidenceFiles
-      });
-
       if (remediation.evidenceFiles && Array.isArray(remediation.evidenceFiles) && remediation.evidenceFiles.length > 0) {
         // Find matching question by questionId (more reliable than nist_id lookup)
         const question = allQuestions.find((q) => q.id === remediation.questionId);
 
         remediation.evidenceFiles.forEach((file) => {
-          console.log(`📁 Adding remediation evidence file: ${file.name}`);
           records.push({
             id: `remediation-${remediation.questionId}-${file.name}`,
             nist_id: remediation.nistId,
@@ -196,8 +187,6 @@ export default function Evidence() {
         });
       }
     });
-
-    console.log(`📁 Evidence page - Remediation Evidence Final: Found ${records.length} evidence files from ${remediations.length} remediations`);
 
     return records;
   }, [remediations, allQuestions]);

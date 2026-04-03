@@ -74,6 +74,9 @@ export const useResetAssessmentLifecycle = () => {
         "gap_remediation_evidence",
         "risk_assessment_data",
         "auditor_verification_data",
+        "continuous_improvement_data",
+        "revision_controls_data",
+        "revision_data",
       ];
 
       STORAGE_KEYS.forEach((key) => {

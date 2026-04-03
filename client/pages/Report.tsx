@@ -164,7 +164,7 @@ export default function Report() {
   }, [canEdit]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 p-4 md:p-8">
+    <div ref={containerRef} className="p-4 md:p-8 space-y-8">
       {canView && !canEdit && (
         <div
           style={{
@@ -180,7 +180,7 @@ export default function Report() {
           You have view-only access to this page. Contact your administrator to request edit access.
         </div>
       )}
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="space-y-8">
         {/* Header Section */}
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -338,7 +338,7 @@ export default function Report() {
                   ? "Begin your NIST CSF 2.0 assessment to populate the audit report."
                   : "Toggle 'Show All Controls' to see all available controls, or answer questions to see results."}
               </p>
-              <Button variant="outline">Start Assessment</Button>
+              <Button variant="outline"  onClick={() => navigate("/assessment")} >Start Assessment</Button>
             </div>
           </Card>
         )}

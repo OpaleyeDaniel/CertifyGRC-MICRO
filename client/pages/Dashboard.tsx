@@ -618,9 +618,6 @@ export default function Dashboard() {
           <Button variant="outline" onClick={() => navigate("/gap-analysis")}>
             Continue Gap Analysis
           </Button>
-          <Button variant="outline" onClick={() => navigate("/evidence")}>
-            Upload Evidence
-          </Button>
           <Button variant="outline" onClick={() => navigate("/risk-assessment")}>
             Open Risk Register
           </Button>

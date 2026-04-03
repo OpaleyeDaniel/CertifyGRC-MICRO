@@ -34,6 +34,7 @@ export default function Review() {
     // getOrCreateVerification,
     approveControl,
     requestRevision,
+    updateOverallComment,
     addCommentBubble,
     removeCommentBubble,
     getVerification,
@@ -122,11 +123,14 @@ export default function Review() {
     approveControl(questionId);
   };
 
-  const handleRequestRevision = (questionId: string, comment: string) => {
-    requestRevision(questionId, comment);
+  const handleRequestRevision = (questionId: string, overallComment: string) => {
+    requestRevision(questionId, overallComment);
     const question = allQuestions.find((q) => q.id === questionId);
     const verification = getVerification(questionId);
     if (question && verification) {
+      const latestInitialComment = verification.assessmentEvidenceComments?.length
+        ? verification.assessmentEvidenceComments[verification.assessmentEvidenceComments.length - 1].text
+        : "";
       const latestGapComment = verification.gapComments?.length
         ? verification.gapComments[verification.gapComments.length - 1].text
         : "";
@@ -139,8 +143,9 @@ export default function Review() {
         question.question,
         question.category,
         question.function,
-        comment,
+        verification.auditorOverallComment ?? overallComment,
         verification.auditorMaturityScore,
+        latestInitialComment,
         latestGapComment,
         latestRiskComment,
         verification.initialAuditorScore,
@@ -196,7 +201,7 @@ export default function Review() {
   }, [params]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gray-50 p-4 md:p-8">
+    <div ref={containerRef} className="p-4 md:p-8 space-y-8">
       {canView && !canEdit && (
         <div
           style={{
@@ -212,7 +217,7 @@ export default function Review() {
           You have view-only access to this page. Contact your administrator to request edit access.
         </div>
       )}
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
@@ -372,6 +377,10 @@ export default function Review() {
                           gapComments={verification.gapComments || []}
                           riskComments={verification.riskComments || []}
                           revisionComment=""
+                          auditorOverallComment={verification.auditorOverallComment}
+                          onUpdateOverallComment={(text) =>
+                            updateOverallComment(question.id, text)
+                          }
                           auditorMaturityScore={verification.auditorMaturityScore}
                           initialAuditorScore={verification.initialAuditorScore}
                           remediationAuditorScore={verification.remediationAuditorScore}

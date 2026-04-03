@@ -17,7 +17,7 @@ export function ContinuousImprovementCard({
   onResumeRework,
 }: ContinuousImprovementCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const rawOverallComment = item.auditorOverallComment || item.auditorComment || "";
+  const rawOverallComment = item.auditorOverallComment || "";
 
   // UI-only parsing fallback for legacy aggregated comments.
   // Keeps section comments in dedicated boxes instead of duplicating in overall.
@@ -32,16 +32,14 @@ export function ContinuousImprovementCard({
     .find((part) => part.startsWith("Risk Assessment Comments:"))
     ?.replace("Risk Assessment Comments:", "")
     .trim();
+  const parsedInitialComment = commentParts
+    .find((part) => part.startsWith("Initial Assessment Comments:"))
+    ?.replace("Initial Assessment Comments:", "")
+    .trim();
   const gapComment = item.auditorGapComment || parsedGapComment;
   const riskComment = item.auditorRiskComment || parsedRiskComment;
-  const overallComment = commentParts
-    .filter(
-      (part) =>
-        !part.startsWith("Gap Analysis & Remediation Comments:") &&
-        !part.startsWith("Risk Assessment Comments:")
-    )
-    .join(" | ")
-    .trim();
+  const overallComment = item.auditorOverallComment || "";
+  const initialComment = item.auditorInitialComment || parsedInitialComment;
 
   // Get status badge styling
   const getStatusBadge = () => {
@@ -175,6 +173,14 @@ export function ContinuousImprovementCard({
 
                 {/* Auditor Feedback */}
                 <div className="space-y-2">
+                  {initialComment && (
+                    <div className="bg-blue-50 rounded p-3 border border-blue-200">
+                      <p className="text-xs font-semibold text-blue-900 mb-1">
+                        Auditor Comment: Initial Assessment
+                      </p>
+                      <p className="text-sm text-blue-900">{initialComment}</p>
+                    </div>
+                  )}
                   {gapComment && (
                     <div className="bg-amber-50 rounded p-3 border border-amber-200">
                       <p className="text-xs font-semibold text-amber-900 mb-1">

@@ -25,7 +25,12 @@ const saveToStorage = (data: RiskAssessmentState) => {
   if (!isLocalStorageAvailable()) return;
 
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    // Keep storage clean: remove key when there is no data
+    if (Object.keys(data).length === 0) {
+      localStorage.removeItem(STORAGE_KEY);
+    } else {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
     // Dispatch custom event to notify other components
     window.dispatchEvent(new CustomEvent('riskAssessmentDataChanged'));
   } catch (error) {
@@ -54,19 +59,31 @@ export const useRiskAssessment = () => {
     // Ensure all completed risk assessments have maturityScore
     if (Object.keys(stored).length > 0) {
       const fixed = Object.entries(stored).reduce((acc, [riskId, risk]: any) => {
-        if (risk.status === "Completed" && risk.maturityScore === undefined) {
+        const normalizedStatus =
+          risk.status === "completed"
+            ? "Completed"
+            : risk.status === "pending"
+              ? "Pending"
+              : risk.status;
+
+        const normalizedRisk = {
+          ...risk,
+          status: normalizedStatus,
+        };
+
+        if (normalizedRisk.status === "Completed" && normalizedRisk.maturityScore === undefined) {
           // Recalculate maturityScore from postTreatmentRiskLevel
           const calculated = (() => {
-            switch (risk.postTreatmentRiskLevel) {
+            switch (normalizedRisk.postTreatmentRiskLevel) {
               case "HIGH": return 2;
               case "MEDIUM": return 3;
               case "LOW": return 4;
               default: return 2;
             }
           })();
-          acc[riskId] = { ...risk, maturityScore: calculated };
+          acc[riskId] = { ...normalizedRisk, maturityScore: calculated };
         } else {
-          acc[riskId] = risk;
+          acc[riskId] = normalizedRisk;
         }
         return acc;
       }, {} as RiskAssessmentState);

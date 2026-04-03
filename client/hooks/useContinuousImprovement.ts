@@ -25,6 +25,7 @@ export interface ContinuousImprovementItem {
   // Revision details
   auditorComment?: string; // Legacy aggregate comment
   auditorOverallComment?: string; // Auditor's overall comment
+  auditorInitialComment?: string; // Auditor comment for Initial Assessment (A)
   auditorGapComment?: string; // Auditor comment for Gap & Remediation
   auditorRiskComment?: string; // Auditor comment for Risk Assessment
   auditorScore?: number; // Legacy overall score
@@ -164,6 +165,7 @@ export function useContinuousImprovement() {
       function_: string,
       auditorOverallComment: string,
       auditorOverallScore?: number,
+      auditorInitialComment?: string,
       auditorGapComment?: string,
       auditorRiskComment?: string,
       initialAuditorScore?: number,
@@ -180,6 +182,7 @@ export function useContinuousImprovement() {
           // Update existing CI record with new revision request
           existing.auditorComment = auditorOverallComment;
           existing.auditorOverallComment = auditorOverallComment;
+          existing.auditorInitialComment = auditorInitialComment;
           existing.auditorGapComment = auditorGapComment;
           existing.auditorRiskComment = auditorRiskComment;
           existing.auditorScore = auditorOverallScore;
@@ -201,6 +204,7 @@ export function useContinuousImprovement() {
             function: function_,
             auditorComment: auditorOverallComment,
             auditorOverallComment,
+            auditorInitialComment,
             auditorGapComment,
             auditorRiskComment,
             auditorScore: auditorOverallScore,

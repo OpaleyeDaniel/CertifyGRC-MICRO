@@ -13,7 +13,7 @@ interface RiskRegisterProps {
   onViewDetails?: (risk: RiskAssessment) => void;
 }
 
-export function RiskRegister({ onViewDetails }: RiskRegisterProps) {
+export function RiskRegister({ onViewDetails: _onViewDetails }: RiskRegisterProps) {
   const { getCompletedRisks } = useRiskAssessment();
   const { getCIRecord } = useContinuousImprovement();
   const [searchTerm, setSearchTerm] = useState("");
@@ -240,12 +240,9 @@ export function RiskRegister({ onViewDetails }: RiskRegisterProps) {
                         "border-b transition-colors",
                         locked
                           ? "bg-orange-50/60 cursor-not-allowed opacity-80"
-                          : "hover:bg-muted/50 cursor-pointer"
+                          : "hover:bg-muted/50"
                       )}
-                      onClick={() => {
-                        if (!locked) onViewDetails?.(risk);
-                      }}
-                      title={locked ? "Locked — revision in progress. Complete the rework cycle to edit." : undefined}
+                      title={locked ? "Locked — revision in progress." : "Read-only risk register row"}
                     >
                       <td className="py-4 px-4">
                         <code className="text-xs bg-muted px-2 py-1 rounded font-mono">

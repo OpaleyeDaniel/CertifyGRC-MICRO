@@ -18,6 +18,7 @@ export interface AuditorVerification {
   remediationEvidenceComments: CommentBubble[]; // Remediation/Gap evidence
   gapComments: CommentBubble[]; // Gap Analysis comments (for backward compat)
   riskComments: CommentBubble[];
+  auditorOverallComment?: string; // Free-text overall auditor comment
   approvedAt?: string;
   revisionRequestedAt?: string;
   submittedForReviewAt?: string; // Timestamp when submitted for review
@@ -39,18 +40,16 @@ export function useAuditorVerification() {
   // Load from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    console.log("📂 Loading auditor verification from localStorage:", { stored, key: STORAGE_KEY });
     if (stored) {
       try {
         const data = JSON.parse(stored);
         // Only load if data is non-empty and valid
         if (Array.isArray(data) && data.length > 0) {
-          console.log(`  ✓ Loaded ${data.length} verification records`);
           const map = new Map(data);
           setVerifications(map);
         } else {
           // Clear invalid or empty data
-          console.log("  ⚠ Empty or invalid data, clearing localStorage");
+          // Empty or invalid data, clear and start fresh
           localStorage.removeItem(STORAGE_KEY);
         }
       } catch (e) {
@@ -58,8 +57,6 @@ export function useAuditorVerification() {
         // Clear corrupted data
         localStorage.removeItem(STORAGE_KEY);
       }
-    } else {
-      console.log("  ℹ No stored verification data found");
     }
     setIsLoaded(true);
   }, []);
@@ -85,14 +82,12 @@ export function useAuditorVerification() {
     if (!isLoaded) return;
 
     if (verifications.size === 0) {
-      console.log("🗑 Removing empty auditor verification storage");
       localStorage.removeItem(STORAGE_KEY);
       window.dispatchEvent(new CustomEvent(CHANGE_EVENT));
       return;
     }
 
     const entries = Array.from(verifications.entries());
-    console.log("💾 Saving to localStorage:", { count: entries.length, key: STORAGE_KEY });
     localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
     window.dispatchEvent(new CustomEvent(CHANGE_EVENT));
   }, [verifications, isLoaded]);
@@ -215,7 +210,7 @@ export function useAuditorVerification() {
 
   // Request revision
   const requestRevision = useCallback(
-    (questionId: string, comment: string = "") => {
+    (questionId: string, overallComment: string = "") => {
       setVerifications((prev) => {
         const updated = new Map(prev);
         const verification = updated.get(questionId);
@@ -224,7 +219,8 @@ export function useAuditorVerification() {
         updated.set(questionId, {
           ...verification,
           status: "revision_requested",
-          auditorComment: comment,
+          auditorComment: overallComment,
+          auditorOverallComment: overallComment,
           revisionRequestedAt: new Date().toISOString(),
           // Remove from Comment & Review queue
           reviewStatus: null,
@@ -235,6 +231,22 @@ export function useAuditorVerification() {
     },
     []
   );
+
+  // Update overall auditor comment without changing workflow state
+  // (Must not remove item from Comment & Review queue)
+  const updateOverallComment = useCallback((questionId: string, text: string) => {
+    setVerifications((prev) => {
+      const updated = new Map(prev);
+      const verification = updated.get(questionId);
+      if (!verification) return updated;
+
+      updated.set(questionId, {
+        ...verification,
+        auditorOverallComment: text,
+      });
+      return updated;
+    });
+  }, []);
 
   // Add a comment bubble to a section
   const addCommentBubble = useCallback(
@@ -469,6 +481,7 @@ export function useAuditorVerification() {
     getOrCreateVerification,
     approveControl,
     requestRevision,
+    updateOverallComment,
     addCommentBubble,
     removeCommentBubble,
     markAsSubmittedForAuditing,

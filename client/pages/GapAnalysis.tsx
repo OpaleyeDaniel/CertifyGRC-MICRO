@@ -265,11 +265,34 @@ export default function GapAnalysis() {
             You have view-only access to this page. Contact your administrator to request edit access.
           </div>
         )}
-        <GapDetailView 
-          gap={selectedGap} 
+        <GapDetailView
+          gap={selectedGap}
           onBack={() => setSelectedGap(null)}
           isRevision={isRevisionItem(selectedGap.id)}
-          revisionComment={getCIRecord(selectedGap.id)?.auditorOverallComment || getCIRecord(selectedGap.id)?.auditorComment}
+          revisionComment={(() => {
+            const ciRecord = getCIRecord(selectedGap.id);
+            if (!ciRecord) return undefined;
+
+            // Prefer dedicated gap comment when available
+            if (ciRecord.auditorGapComment) return ciRecord.auditorGapComment;
+
+            // Fallback: parse overall/legacy aggregate and strip risk-specific segments
+            const source =
+              ciRecord.auditorOverallComment || ciRecord.auditorComment || "";
+            if (!source) return undefined;
+
+            return source
+              .split(" | ")
+              .map((part) => part.trim())
+              .filter(
+                (part) =>
+                  part &&
+                  !part.toLowerCase().startsWith("risk comments:") &&
+                  !part.toLowerCase().startsWith("risk assessment comments:") &&
+                  !part.toLowerCase().includes("risk comment:")
+              )
+              .join(" | ");
+          })()}
           onDraftSaved={() => {
             setSelectedGap(null);
             setActiveTab("in-progress");
@@ -366,7 +389,7 @@ export default function GapAnalysis() {
 
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-5">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="table">Active Gaps</TabsTrigger>
           <TabsTrigger value="by-function">By Function</TabsTrigger>
           <TabsTrigger value="in-progress">
@@ -382,14 +405,6 @@ export default function GapAnalysis() {
             {treatedGaps.length > 0 && (
               <span className="ml-2 text-xs bg-green-600 text-white rounded-full px-2 py-0.5">
                 {treatedGaps.length}
-              </span>
-            )}
-          </TabsTrigger>
-          <TabsTrigger value="revision">
-            Revision
-            {revisionControls.length > 0 && (
-              <span className="ml-2 text-xs bg-orange-600 text-white rounded-full px-2 py-0.5">
-                {revisionControls.length}
               </span>
             )}
           </TabsTrigger>

@@ -43,6 +43,8 @@ interface AuditorControlCardProps {
   onUpdateAuditorMaturityScore: (score: number) => void;
   onUpdateSectionAuditorScore: (section: "initial" | "remediation" | "risk", score: number) => void;
   onViewFile?: (file: { url: string; name: string }) => void;
+  auditorOverallComment?: string;
+  onUpdateOverallComment?: (text: string) => void;
 }
 
 export function AuditorControlCard({
@@ -67,6 +69,8 @@ export function AuditorControlCard({
   onUpdateAuditorMaturityScore,
   onUpdateSectionAuditorScore,
   onViewFile,
+  auditorOverallComment,
+  onUpdateOverallComment,
 }: AuditorControlCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [revisionInput, setRevisionInput] = useState(revisionComment);
@@ -976,6 +980,20 @@ export function AuditorControlCard({
                   )}
                 </div>
               )}
+
+              {/* Auditor Overall Comment (always visible for auditors) */}
+              <div className="space-y-2 pt-4 border-t border-gray-200">
+                <label className="text-sm font-semibold text-gray-900">
+                  Auditor Overall Comment
+                </label>
+                <Textarea
+                  placeholder="Summarise your overall assessment, including key reasons for approval or revision."
+                  value={auditorOverallComment ?? ""}
+                  onChange={(e) => onUpdateOverallComment?.(e.target.value)}
+                  className="text-sm"
+                  rows={3}
+                />
+              </div>
 
               {/* Auditor Maturity Score Selector */}
               <div className="space-y-3 pt-4 border-t border-gray-200">

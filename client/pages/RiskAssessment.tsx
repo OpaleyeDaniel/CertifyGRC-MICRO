@@ -145,15 +145,7 @@ export default function RiskAssessment() {
 
         {/* Risk Register Tab */}
         <TabsContent value="register" className="space-y-6 mt-6">
-          <RiskRegister
-            onViewDetails={(risk) => {
-              setSelectedQuestionId(risk.questionId);
-              setSelectedNistId(risk.nistId);
-              setSelectedGapDescription(risk.gapDescription);
-              setSelectedFunction(risk.function);
-              setSelectedCategory(risk.category);
-            }}
-          />
+          <RiskRegister />
         </TabsContent>
       </Tabs>
     </div>

@@ -93,7 +93,7 @@ export default function Improvement() {
   }, [params]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gray-50 p-4 md:p-8">
+    <div ref={containerRef} className="p-4 md:p-8 space-y-8">
       {canView && !canEdit && (
         <div
           style={{
@@ -109,7 +109,7 @@ export default function Improvement() {
           You have view-only access to this page. Contact your administrator to request edit access.
         </div>
       )}
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>

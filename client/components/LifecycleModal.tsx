@@ -383,10 +383,6 @@ export function LifecycleModal({
 
               {riskAssessment ? (
                 <div className="space-y-6">
-                  {console.log("📊 Risk Assessment Status:", {
-                    status: riskAssessment.status,
-                    maturityScore: riskAssessment.maturityScore,
-                  })}
 
                   {/* Risk Assessment Maturity Score - Only show if completed */}
                   {riskAssessment.status === "Completed" && riskAssessment.maturityScore !== undefined && (
@@ -670,7 +666,8 @@ export function LifecycleModal({
             </div>
             )}
 
-            {/* SECTION D: EVIDENCE, CERTIFICATION & LIVE VIEWER */}
+            {/* SECTION D: EVIDENCE, CERTIFICATION & LIVE VIEWER - Hidden for all YES answers */}
+            {!question.userAnswer?.startsWith("Yes") && (
             <div className="space-y-4">
               <div className="flex items-center gap-2 mb-6">
                 <div className="h-8 w-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm">
@@ -787,26 +784,27 @@ export function LifecycleModal({
                 </Card>
               )}
 
-              {/* Submit for Review Button - Always visible at the end of Section D */}
-              <Button
-                onClick={() => {
-                  if (onSubmitForReview && question) {
-                    console.log("📤 Submitting for review:", { questionId: question.id, nistId: question.nist_id });
-                    onSubmitForReview(question.id, question.nist_id);
-                    toast({
-                      title: "Control Submitted for Review",
-                      description: `${question.nist_id} has been moved to the Comment & Review page for auditor verification.`,
-                      variant: "default",
-                    });
-                    onClose();
-                  }
-                }}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 h-auto"
-              >
-                <Check className="h-4 w-4 mr-2" />
-                Submit for Review
-              </Button>
             </div>
+            )}
+
+            {/* Submit for Review Button - Always visible for all answer types */}
+            <Button
+              onClick={() => {
+                if (onSubmitForReview && question) {
+                  onSubmitForReview(question.id, question.nist_id);
+                  toast({
+                    title: "Control Submitted for Review",
+                    description: `${question.nist_id} has been moved to the Comment & Review page for auditor verification.`,
+                    variant: "default",
+                  });
+                  onClose();
+                }
+              }}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 h-auto"
+            >
+              <Check className="h-4 w-4 mr-2" />
+              Submit for Review
+            </Button>
           </div>
         </ScrollArea>
       </DialogContent>
