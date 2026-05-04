@@ -1,0 +1,79 @@
+ISO 27001 assessment questions as shown in the CertifyGRC UI.
+Source: client/frameworks/iso27001/data/clauses.ts + annexA.ts (field: text).
+This is not the same dataset as iso27001/data/clauses.json or annex_a.json.
+
+============================================================
+CLAUSE 4 — Context of the organisation
+============================================================
+
+4.1  Q1 [c4-1-internal-external-issues]: Has the organisation identified the internal and external issues that are relevant to its purpose and that affect its ability to achieve the intended outcomes of the ISMS?
+4.1  Q2 [c4-1-context-review]: How frequently is the context of the organisation reviewed and updated, and is there evidence of that review?
+4.2  Q3 [c4-2-interested-parties]: Has the organisation identified interested parties relevant to the ISMS and their information security, legal, regulatory and contractual requirements?
+4.2  Q4 [c4-2-legal-register]: Is there a maintained register of applicable legal, regulatory and contractual information security obligations?
+4.3  Q5 [c4-3-scope-defined]: Is the scope of the ISMS formally defined, documented and approved, covering processes, locations, assets, and interfaces with third parties?
+4.3  Q6 [c4-3-scope-exclusions]: Where parts of the organisation are excluded from the ISMS, are the exclusions explicitly documented and justified?
+4.3  Q7 [c4-3-interfaces-dependencies]: Have interfaces and dependencies with external parties (cloud providers, suppliers, subsidiaries, regulators) been mapped into the scope?
+4.4  Q8 [c4-4-isms-established]: Is the ISMS established, implemented, maintained and continually improved in line with ISO 27001?
+
+============================================================
+CLAUSE 5 — Leadership
+============================================================
+
+5.1  Q1 [c5-1-commitment]: Does top management demonstrate leadership and commitment to the ISMS through policy approval, resource allocation and visible sponsorship?
+5.2  Q2 [c5-2-policy-approved]: Has an information security policy been approved by top management, documented, communicated, and made available to interested parties?
+5.2  Q3 [c5-2-policy-review]: How frequently is the information security policy reviewed and re-approved?
+5.3  Q4 [c5-3-roles-responsibilities]: Are information security roles, responsibilities and authorities assigned and communicated within the organisation?
+5.3  Q5 [c5-3-isms-manager-designated]: Is a single individual formally designated with the authority to ensure ISMS conformity and to report ISMS performance to top management?
+
+============================================================
+CLAUSE 6 — Planning
+============================================================
+
+6.1.1  Q1 [c6-1-1-general-risks]: Has the organisation determined the risks and opportunities that need to be addressed to ensure the ISMS can achieve its intended outcomes?
+6.1.2  Q2 [c6-1-2-risk-methodology]: Is there a documented, repeatable information security risk assessment process, including criteria for accepting and performing risk assessments?
+6.1.2  Q3 [c6-1-2-repeatability]: Does the methodology produce consistent, valid and comparable results when applied by different assessors across the ISMS scope?
+6.1.3  Q4 [c6-1-3-risk-treatment-process]: Is there a documented process for selecting risk treatment options and determining the controls necessary to implement them?
+6.1.3  Q5 [c6-1-3-soa-produced]: Has a Statement of Applicability been produced that lists all Annex A controls, justifications for inclusion/exclusion, and implementation status?
+6.1.3  Q6 [c6-1-3-treatment-plan-approved]: Is the risk treatment plan approved by risk owners and residual risk accepted by accountable management?
+6.2  Q7 [c6-2-objectives]: Have measurable information security objectives been established, consistent with the policy, and communicated to relevant functions?
+6.2  Q8 [c6-2-objectives-tracking]: Are security objectives monitored, measured and reported to top management on a defined cadence?
+6.3  Q9 [c6-3-planning-changes]: Are changes to the ISMS planned in a structured way, considering purpose, consequences, resources, and responsibilities?
+
+============================================================
+CLAUSE 7 — Support
+============================================================
+
+7.1  Q1 [c7-1-resources]: Have adequate resources been determined and provided for the establishment, implementation, maintenance and continual improvement of the ISMS?
+7.2  Q2 [c7-2-competence]: Have competency requirements been defined for personnel performing ISMS-relevant roles, and is competence tracked and evidenced?
+7.3  Q3 [c7-3-awareness]: Are personnel aware of the security policy, their contribution to the ISMS, and the implications of not conforming?
+7.4  Q4 [c7-4-communication]: Has a plan been defined for internal and external communications relevant to the ISMS (what, when, to whom, by whom)?
+7.5.1  Q5 [c7-5-1-documented-info-general]: Does the ISMS include the documented information required by the standard and that determined by the organisation as necessary for its effectiveness?
+7.5.2  Q6 [c7-5-2-creation-update]: Are documented information items properly identified (title, author, date, version) and reviewed and approved for suitability?
+7.5.3  Q7 [c7-5-3-control-of-documented]: Are documented information items protected against loss of confidentiality, improper use, or loss of integrity — including distribution, access, retrieval, retention and disposition?
+
+============================================================
+CLAUSE 8 — Operation
+============================================================
+
+8.1  Q1 [c8-1-operational-planning]: Does the organisation plan, implement and control the processes needed to meet ISMS requirements and to implement the actions determined in 6.1?
+8.1  Q2 [c8-1-outsourced]: Are outsourced processes that affect the ISMS determined and controlled?
+8.2  Q3 [c8-2-risk-assessments-executed]: Are information security risk assessments performed at planned intervals or when significant changes are proposed or occur?
+8.3  Q4 [c8-3-treatment-plan-implemented]: Is the information security risk treatment plan implemented, with action progress tracked and residual risks reassessed?
+
+============================================================
+CLAUSE 9 — Performance evaluation
+============================================================
+
+9.1  Q1 [c9-1-monitoring]: Has the organisation determined what needs to be monitored, the methods, frequencies, who analyses results and how they are reported?
+9.2  Q2 [c9-2-internal-audit-program]: Is there an internal audit programme covering scope, criteria, frequency and methods, and are auditors independent of the areas they audit?
+9.2  Q3 [c9-2-internal-audits-executed]: Are audits conducted according to the plan, with results documented, retained and reported to management?
+9.3  Q4 [c9-3-management-review-inputs]: Do management reviews consider all required inputs: status of actions, changes in context, performance indicators, feedback from interested parties, risk results, opportunities for improvement?
+9.3  Q5 [c9-3-management-review-outputs]: Do management reviews result in documented decisions and actions related to continual improvement and changes to the ISMS?
+
+============================================================
+CLAUSE 10 — Improvement
+============================================================
+
+10.1  Q1 [c10-1-continual-improvement]: Does the organisation continually improve the suitability, adequacy and effectiveness of the ISMS?
+10.2  Q2 [c10-2-nonconformity]: When a nonconformity occurs, does the organisation react, evaluate the need for action, implement the action, review effectiveness, update risks, and make changes to the ISMS as needed?
+10.2  Q3 [c10-2-recurrence-prevention]: Is there evidence that corrective actions prevent recurrence (effectiveness verification, trend analysis)?

@@ -13,6 +13,8 @@ export const clearAllAppState = () => {
     "continuous_improvement_data",  // Continuous Improvement queue
     "revision_controls_data",       // Gap Analysis Revision tab
     "revision_data",                // Revision records
+    "certifygrc_user_integrations_v1",
+    "certifygrc_integration_audit_v1",
   ];
 
   try {

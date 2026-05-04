@@ -1,4 +1,4 @@
-import { Bell, Search, Settings, LogOut, User, Menu } from "lucide-react";
+import { Bell, Search, Settings, LogOut, User, Menu, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -179,86 +179,30 @@ export function Header({ onMenuClick }: HeaderProps) {
     const verifications = getAllVerifications();
     const ciItems = getAllItems();
     const items: SearchItem[] = [
-      {
-        id: "page-dashboard",
-        type: "Page",
-        title: "Dashboard",
-        subtitle: "Overview and command center",
-        keywords: "dashboard home overview command center",
-        route: "/dashboard",
-      },
-      {
-        id: "page-assessment",
-        type: "Page",
-        title: "Assessment",
-        subtitle: "NIST CSF assessment workflow",
-        keywords: "assessment nist controls",
-        route: "/assessment?tab=assessment",
-      },
-      {
-        id: "page-gap-analysis",
-        type: "Page",
-        title: "Gap analysis",
-        subtitle: "Open, in-progress, treated gaps",
-        keywords: "gap analysis remediation open treated draft",
-        route: "/gap-analysis",
-      },
-      {
-        id: "page-risk-assessment",
-        type: "Page",
-        title: "Risk assessment",
-        subtitle: "Pending assessments and risk register",
-        keywords: "risk assessment register pending",
-        route: "/risk-assessment",
-      },
-      {
-        id: "page-evidence",
-        type: "Page",
-        title: "Evidence repository",
-        subtitle: "Assessment and remediation evidence",
-        keywords: "evidence files documents repository",
-        route: "/evidence",
-      },
-      {
-        id: "page-report",
-        type: "Page",
-        title: "Report",
-        subtitle: "Control lifecycle report",
-        keywords: "report controls lifecycle",
-        route: "/report",
-      },
-      {
-        id: "page-review",
-        type: "Page",
-        title: "Comment and review",
-        subtitle: "Auditor verification workspace",
-        keywords: "comment review auditor verification",
-        route: "/review",
-      },
-      {
-        id: "page-improvement",
-        type: "Page",
-        title: "Continuous improvement",
-        subtitle: "Revision queue and rework",
-        keywords: "continuous improvement revision rework",
-        route: "/improvement",
-      },
-      {
-        id: "page-profile",
-        type: "Page",
-        title: "Profile",
-        subtitle: "User profile and security settings",
-        keywords: "profile account password avatar",
-        route: "/profile",
-      },
-      {
-        id: "page-settings",
-        type: "Page",
-        title: "Settings",
-        subtitle: "Account, users, appearance",
-        keywords: "settings account users permissions appearance",
-        route: "/settings",
-      },
+      // Omega root / global pages.
+      { id: "page-dashboard",   type: "Page", title: "Omega Dashboard",          subtitle: "GRC command center",                   keywords: "dashboard home overview command center omega", route: "/dashboard" },
+      { id: "page-frameworks-hub", type: "Page", title: "Frameworks",             subtitle: "Connected frameworks hub",             keywords: "compliance framework frameworks hub nist iso pci omega", route: "/frameworks" },
+      { id: "page-omega-assessment", type: "Page", title: "Assessment (cross-framework)", subtitle: "All assessments across frameworks", keywords: "assessment controls omega cross framework", route: "/assessment" },
+      { id: "page-omega-gap",   type: "Page", title: "Gap Analysis (cross-framework)", subtitle: "All gaps across frameworks",     keywords: "gap gaps remediation severity cross framework", route: "/gap-analysis" },
+      { id: "page-omega-risk",  type: "Page", title: "Risk Assessment (cross-framework)", subtitle: "Unified risk register",       keywords: "risk register heatmap cross framework", route: "/risk" },
+      { id: "page-omega-evidence", type: "Page", title: "Evidence (cross-framework)", subtitle: "Unified evidence library",         keywords: "evidence library artefacts stale reuse", route: "/evidence" },
+      { id: "page-omega-report", type: "Page", title: "Reports",                  subtitle: "Executive and framework reports",      keywords: "report reports executive compliance posture", route: "/report" },
+      { id: "page-omega-review", type: "Page", title: "Comment & Review",         subtitle: "Pending reviews and comments",         keywords: "comment review auditor collaboration", route: "/review" },
+      { id: "page-omega-improvement", type: "Page", title: "Continuous Improvement", subtitle: "Remediation backlog and uplift",  keywords: "improvement continuous revision maturity", route: "/improvement" },
+      { id: "page-omega-cross", type: "Page", title: "Cross Mapping",             subtitle: "Framework crosswalk and overlap",      keywords: "cross mapping crosswalk overlap nist iso pci", route: "/cross-mapping" },
+      { id: "page-omega-readiness", type: "Page", title: "Audit Readiness",      subtitle: "Readiness score and blockers",         keywords: "audit readiness blockers approval score", route: "/audit-readiness" },
+      { id: "page-omega-notifications", type: "Page", title: "Notifications",    subtitle: "Alerts and activity feed",             keywords: "notifications alerts activity events", route: "/notifications" },
+      { id: "page-profile",     type: "Page", title: "Profile",                   subtitle: "User profile and security settings",   keywords: "profile account password avatar", route: "/profile" },
+      { id: "page-settings",    type: "Page", title: "Settings",                  subtitle: "Account, users, appearance",           keywords: "settings account users permissions appearance", route: "/settings" },
+
+      // NIST-CSF specific deep links.
+      { id: "page-nist-assessment", type: "Page", title: "NIST-CSF Assessment",  subtitle: "Framework workspace",                  keywords: "assessment nist controls framework", route: "/frameworks/nist-csf/assessment?tab=assessment" },
+      { id: "page-nist-gap",    type: "Page", title: "NIST-CSF Gap analysis",    subtitle: "Framework workspace",                  keywords: "gap analysis remediation nist",         route: "/frameworks/nist-csf/gap-analysis" },
+      { id: "page-nist-risk",   type: "Page", title: "NIST-CSF Risk assessment", subtitle: "Framework workspace",                  keywords: "risk assessment nist register",         route: "/frameworks/nist-csf/risk-assessment" },
+      { id: "page-nist-evidence", type: "Page", title: "NIST-CSF Evidence",      subtitle: "Framework workspace",                  keywords: "evidence nist files documents",         route: "/frameworks/nist-csf/evidence" },
+      { id: "page-nist-report", type: "Page", title: "NIST-CSF Report",          subtitle: "Framework workspace",                  keywords: "report nist lifecycle",                 route: "/frameworks/nist-csf/report" },
+      { id: "page-nist-review", type: "Page", title: "NIST-CSF Comment & review", subtitle: "Framework workspace",                keywords: "comment review nist auditor verification", route: "/frameworks/nist-csf/review" },
+      { id: "page-nist-improvement", type: "Page", title: "NIST-CSF Continuous improvement", subtitle: "Framework workspace",  keywords: "continuous improvement nist revision",  route: "/frameworks/nist-csf/improvement" },
     ];
 
     allQuestions.forEach((q) => {
@@ -268,7 +212,7 @@ export function Header({ onMenuClick }: HeaderProps) {
         title: `${q.nist_id} ${q.question}`,
         subtitle: `${q.function} • ${q.category}`,
         keywords: `${q.nist_id} ${q.question} ${q.function} ${q.category}`,
-        route: `/assessment?tab=assessment&nist=${encodeURIComponent(q.nist_id)}`,
+        route: `/frameworks/nist-csf/assessment?tab=assessment&nist=${encodeURIComponent(q.nist_id)}`,
       });
     });
 
@@ -279,7 +223,7 @@ export function Header({ onMenuClick }: HeaderProps) {
         title: `${r.nistId} remediation (${r.status})`,
         subtitle: `${r.priority} priority • ${r.function}`,
         keywords: `${r.nistId} ${r.question} ${r.rootCause} ${r.actionPlan} ${r.priority} ${r.status}`,
-        route: `/gap-analysis?controlId=${encodeURIComponent(r.questionId)}`,
+        route: `/frameworks/nist-csf/gap-analysis?controlId=${encodeURIComponent(r.questionId)}`,
       });
     });
 
@@ -290,7 +234,7 @@ export function Header({ onMenuClick }: HeaderProps) {
         title: `${r.nistId} risk (${r.status})`,
         subtitle: `${r.postTreatmentRiskLevel} residual risk • ${r.function || "NIST"}`,
         keywords: `${r.riskId} ${r.nistId} ${r.gapDescription} ${r.riskDescription.asset} ${r.riskDescription.threat} ${r.riskDescription.vulnerability} ${r.postTreatmentRiskLevel}`,
-        route: `/risk-assessment?questionId=${encodeURIComponent(r.questionId)}&nist=${encodeURIComponent(r.nistId)}`,
+        route: `/frameworks/nist-csf/risk-assessment?questionId=${encodeURIComponent(r.questionId)}&nist=${encodeURIComponent(r.nistId)}`,
       });
     });
 
@@ -303,7 +247,7 @@ export function Header({ onMenuClick }: HeaderProps) {
           title: f.name || `${q.nist_id} evidence`,
           subtitle: `Assessment evidence • ${q.nist_id}`,
           keywords: `${f.name} ${q.nist_id} ${q.question} assessment evidence`,
-        route: `/evidence?q=${encodeURIComponent(f.name || q.nist_id)}`,
+        route: `/frameworks/nist-csf/evidence?q=${encodeURIComponent(f.name || q.nist_id)}`,
         });
       });
     });
@@ -317,7 +261,7 @@ export function Header({ onMenuClick }: HeaderProps) {
           title: f.name || `${r.nistId} remediation evidence`,
           subtitle: `Remediation evidence • ${r.nistId}`,
           keywords: `${f.name} ${r.nistId} ${r.question} remediation evidence`,
-        route: `/evidence?q=${encodeURIComponent(f.name || r.nistId)}`,
+        route: `/frameworks/nist-csf/evidence?q=${encodeURIComponent(f.name || r.nistId)}`,
         });
       });
     });
@@ -329,7 +273,7 @@ export function Header({ onMenuClick }: HeaderProps) {
         title: `${v.nistId} review (${v.status})`,
         subtitle: v.reviewStatus || "Review workflow",
         keywords: `${v.nistId} ${v.status} ${v.reviewStatus || ""} ${v.auditorComment || ""}`,
-        route: `/review?q=${encodeURIComponent(v.nistId)}`,
+        route: `/frameworks/nist-csf/review?q=${encodeURIComponent(v.nistId)}`,
       });
     });
 
@@ -340,7 +284,7 @@ export function Header({ onMenuClick }: HeaderProps) {
         title: `${item.nistId} ${item.status.replace("_", " ")}`,
         subtitle: `${item.function} • ${item.category}`,
         keywords: `${item.nistId} ${item.controlTitle} ${item.auditorOverallComment || ""} ${item.status}`,
-        route: `/improvement?q=${encodeURIComponent(item.nistId)}`,
+        route: `/frameworks/nist-csf/improvement?q=${encodeURIComponent(item.nistId)}`,
       });
     });
 
@@ -570,6 +514,10 @@ export function Header({ onMenuClick }: HeaderProps) {
               <DropdownMenuItem onSelect={() => navigate("/settings")}>
                 <Settings className="h-4 w-4 mr-2" />
                 <span>Settings</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigate("/frameworks")}>
+                <Shield className="h-4 w-4 mr-2" />
+                <span>Frameworks</span>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem

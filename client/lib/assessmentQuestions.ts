@@ -3,6 +3,13 @@ export interface EvidenceFile {
   url: string;
   name: string;
   size: number; // in bytes
+  sourceKind?: "local" | "cloud";
+  storageMode?: "import" | "link";
+  providerId?: string;
+  externalFileId?: string;
+  externalPath?: string;
+  attachedBy?: string;
+  attachedAt?: string;
 }
 
 // Merged NIST CSF 2.0 Assessment Questions with enhanced fields

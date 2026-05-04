@@ -5,31 +5,94 @@ import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 import { useEffect } from "react";
-import { Layout } from "@/components/layout/Layout";
+import { OmegaLayout } from "@/components/layout/OmegaLayout";
+import { FrameworkLayout } from "@/components/layout/FrameworkLayout";
 import { clearAllAppState } from "@/lib/clearAppState";
 import { clearAllEvidenceFiles } from "@/lib/resetAssessmentLifecycle";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
-// Pages
+// Omega root platform pages — the cross-framework command center.
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Dashboard from "./pages/Dashboard";
-import Assessment from "./pages/Assessment";
-import GapAnalysis from "./pages/GapAnalysis";
-import RiskAssessment from "./pages/RiskAssessment";
-import Evidence from "./pages/Evidence";
-import Report from "./pages/Report";
-import Review from "./pages/Review";
-import Improvement from "./pages/Improvement";
+import OmegaDashboard from "./pages/OmegaDashboard";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/settings/SettingsPage";
+import FrameworksHub from "./pages/frameworks/FrameworksHub";
+
+// Omega global sidebar pages — aggregate data from every framework.
+import OmegaAssessment from "./pages/omega/OmegaAssessment";
+import OmegaGapAnalysis from "./pages/omega/OmegaGapAnalysis";
+import OmegaRiskAssessment from "./pages/omega/OmegaRiskAssessment";
+import OmegaEvidence from "./pages/omega/OmegaEvidence";
+import OmegaReport from "./pages/omega/OmegaReport";
+import OmegaReview from "./pages/omega/OmegaReview";
+import OmegaImprovement from "./pages/omega/OmegaImprovement";
+import OmegaCrossMapping from "./pages/omega/OmegaCrossMapping";
+import OmegaAuditReadiness from "./pages/omega/OmegaAuditReadiness";
+import OmegaNotifications from "./pages/omega/OmegaNotifications";
+
+// Framework registry — all framework-specific routes are derived from here.
+import { REGISTERED_FRAMEWORKS } from "@/frameworks/registry";
 
 const queryClient = new QueryClient();
+
+/**
+ * Dynamic framework-workspace routes — one per registered framework.
+ * Inactive / coming-soon frameworks redirect back to the hub so no
+ * broken route ever gets mounted.
+ */
+const frameworkWorkspaceRoutes = REGISTERED_FRAMEWORKS.map((framework) => {
+  if (framework.status !== "active" || !framework.Routes) {
+    return (
+      <Route
+        key={framework.id}
+        path={`${framework.basePath}/*`}
+        element={<Navigate to="/frameworks" replace />}
+      />
+    );
+  }
+  const FrameworkComponent = framework.Routes;
+  return (
+    <Route
+      key={framework.id}
+      path={`${framework.basePath}/*`}
+      element={
+        <ProtectedRoute>
+          <FrameworkLayout framework={framework}>
+            <FrameworkComponent />
+          </FrameworkLayout>
+        </ProtectedRoute>
+      }
+    />
+  );
+});
+
+/**
+ * Legacy absolute paths declared by any framework get redirected into
+ * the owning framework — keeps pre-refactor deep links working.
+ */
+const legacyRedirectRoutes = REGISTERED_FRAMEWORKS.flatMap((framework) =>
+  (framework.legacyRedirects ?? []).map((redirect) => {
+    const toPath = `${framework.basePath}/${redirect.to.replace(/^\//, "")}`;
+    return (
+      <Route
+        key={`${framework.id}-${redirect.from}`}
+        path={redirect.from}
+        element={<Navigate to={toPath} replace />}
+      />
+    );
+  }),
+);
 
 const AppContent = () => {
   // Minimal global notifier so same-tab localStorage clears/resets propagate to
@@ -68,8 +131,6 @@ const AppContent = () => {
   // Translate storage changes into the domain events that hooks already listen for.
   // Also covers DevTools/manual clears by checking on window focus.
   useEffect(() => {
-    // We only need to help with same-tab clears/removals.
-    // Regular writes already dispatch domain events from their owning hooks.
     const emitAllDomainSync = () => {
       window.dispatchEvent(new CustomEvent("assessmentDataChanged"));
       window.dispatchEvent(new CustomEvent("gapRemediationDataChanged"));
@@ -114,7 +175,6 @@ const AppContent = () => {
     const handleAppStorageChanged = (e: any) => {
       const detail = e?.detail || {};
       const key: string | undefined = detail.key;
-      // Avoid event storms: we only broadcast on removals/clears.
       if (detail.type === "setItem") return;
       if (detail.type === "clear") {
         emitAllDomainSync();
@@ -126,7 +186,6 @@ const AppContent = () => {
     };
 
     const handleFocus = () => {
-      // DevTools "Clear site data" doesn't call JS APIs; on focus we resync.
       emitAllDomainSync();
     };
 
@@ -151,9 +210,6 @@ const AppContent = () => {
 
     (window as any).__clearAllLocalStorage = () => {
       console.log("🗑️ COMPLETE LOCALSTORAGE WIPE - REMOVING ALL DATA...\n");
-
-      console.log("📋 ASSESSMENT DATA:");
-      // Known assessment keys
       const assessmentKeys = [
         "nist_assessment_answers",
         "nist_assessment_responses",
@@ -161,125 +217,68 @@ const AppContent = () => {
         "gap_remediation_evidence",
         "risk_assessment_data",
       ];
-
       assessmentKeys.forEach((key) => {
         if (localStorage.getItem(key)) {
           localStorage.removeItem(key);
           console.log(`  ✓ Removed: ${key}`);
         }
       });
-
-      console.log("\n📋 COMMENT & REVIEW DATA:");
-      // Comment & Review keys
       const reviewKeys = [
         "auditor_verification_data",
         "continuous_improvement_data",
         "revision_controls_data",
         "revision_data",
       ];
-
       reviewKeys.forEach((key) => {
         if (localStorage.getItem(key)) {
-          const data = localStorage.getItem(key);
-          console.log(`  ⚠️  Found: ${key} (${data?.length} chars)`);
           localStorage.removeItem(key);
           console.log(`  ✅ Removed: ${key}`);
         }
       });
-
-      console.log("\n📋 CLEARING ALL REMAINING ITEMS:");
-      // Clear ALL remaining localStorage items (catch anything else)
-      const allKeys = Object.keys(localStorage);
-      if (allKeys.length > 0) {
-        allKeys.forEach((key) => {
-          console.log(`  ✓ Cleared: ${key}`);
-          localStorage.removeItem(key);
-        });
-      } else {
-        console.log("  (no additional items)");
-      }
-
-      // Force clear as fallback
-      console.log("\n🔄 FINALIZING CLEAR:");
+      Object.keys(localStorage).forEach((key) => {
+        localStorage.removeItem(key);
+      });
       try {
         localStorage.clear();
-        console.log("  ✓ localStorage.clear() executed");
       } catch (e) {
         console.error("  ⚠️  clear() failed:", e);
       }
-
-      // Verify everything is gone
-      const remaining = Object.keys(localStorage);
-      console.log(`\n✅ VERIFICATION: ${remaining.length} items remaining\n`);
-
-      if (remaining.length === 0) {
-        console.log("🎉 SUCCESS: Complete wipe successful!");
-        console.log("🔄 Reloading page in 1 second...");
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-      } else {
-        console.error("⚠️  WARNING: Items still remain:", remaining);
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-      }
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     };
-
-    console.log("💡 CONSOLE COMMANDS AVAILABLE:");
-    console.log("   - __clearAllEvidence() : Clear only evidence files");
-    console.log("   - __clearAllLocalStorage() : Clear ALL data from localStorage");
   }, []);
 
   // Handle reset flag in URL (?reset=true) or clear evidence (?clearEvidence=true)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-
     if (params.has("clearEvidence")) {
-      console.log("🗑️ CLEARING ALL EVIDENCE FILES...");
       clearAllEvidenceFiles();
-      console.log("✓ All evidence files removed. Reloading...");
-      // Remove the clearEvidence parameter and reload
       setTimeout(() => {
         window.location.href = "/";
       }, 500);
     } else if (params.has("reset")) {
-      console.log("🔄 Resetting application to clean state...");
       clearAllAppState();
-      console.log("✓ Application reset complete. Reloading...");
-      // Remove the reset parameter and reload
       setTimeout(() => {
         window.location.href = "/";
       }, 100);
     }
   }, []);
 
-  // Selective cleanup: Only clear old NIST assessment data, preserve auditor verification data
+  // Selective cleanup of legacy storage keys retained for backward compat.
   useEffect(() => {
     try {
-      console.log("🔄 Performing selective cleanup...");
-
-      // Only clear specific old keys - DO NOT clear auditor_verification_data
       const legacyKeysToCheck = [
         "nist_assessment_answers",
         "nist_assessment_responses",
         "gap_remediation_evidence",
       ];
-
-      let foundData = false;
       legacyKeysToCheck.forEach((key) => {
         if (localStorage.getItem(key)) {
-          localStorage.removeItem(key);
-          console.log(`  ✓ Cleared legacy: ${key}`);
-          foundData = true;
+          // Intentionally left blank — legacy keys are preserved so the
+          // NIST-CSF hooks can hydrate from them.
         }
       });
-
-      if (foundData) {
-        console.log("✓ Legacy data cleared. App ready.");
-      } else {
-        console.log("✓ App initialized.");
-      }
     } catch (e) {
       console.error("Cleanup failed:", e);
     }
@@ -292,17 +291,20 @@ const AppContent = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            {/* Login */}
+            {/* Public landing / marketing (kept as-is). */}
+            <Route path="/landing" element={<Index />} />
+
+            {/* Auth. */}
             <Route path="/login" element={<LoginPage />} />
 
-            {/* App Pages - With Layout */}
+            {/* Omega root (GRC operating system) shell. */}
             <Route
               path="/"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Dashboard />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaDashboard />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
@@ -310,20 +312,31 @@ const AppContent = () => {
               path="/dashboard"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Dashboard />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaDashboard />
+                  </OmegaLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/frameworks"
+              element={
+                <ProtectedRoute>
+                  <OmegaLayout>
+                    <FrameworksHub />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
 
+            {/* Omega global cross-framework pages. */}
             <Route
               path="/assessment"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Assessment />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaAssessment />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
@@ -331,29 +344,33 @@ const AppContent = () => {
               path="/gap-analysis"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <GapAnalysis />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaGapAnalysis />
+                  </OmegaLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/risk"
+              element={
+                <ProtectedRoute>
+                  <OmegaLayout>
+                    <OmegaRiskAssessment />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
             <Route
               path="/risk-assessment"
-              element={
-                <ProtectedRoute>
-                  <Layout>
-                    <RiskAssessment />
-                  </Layout>
-                </ProtectedRoute>
-              }
+              element={<Navigate to="/risk" replace />}
             />
             <Route
               path="/evidence"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Evidence />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaEvidence />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
@@ -361,9 +378,9 @@ const AppContent = () => {
               path="/report"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Report />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaReport />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
@@ -371,9 +388,9 @@ const AppContent = () => {
               path="/review"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Review />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaReview />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
@@ -381,21 +398,50 @@ const AppContent = () => {
               path="/improvement"
               element={
                 <ProtectedRoute>
-                  <Layout>
-                    <Improvement />
-                  </Layout>
+                  <OmegaLayout>
+                    <OmegaImprovement />
+                  </OmegaLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/cross-mapping"
+              element={
+                <ProtectedRoute>
+                  <OmegaLayout>
+                    <OmegaCrossMapping />
+                  </OmegaLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/audit-readiness"
+              element={
+                <ProtectedRoute>
+                  <OmegaLayout>
+                    <OmegaAuditReadiness />
+                  </OmegaLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/notifications"
+              element={
+                <ProtectedRoute>
+                  <OmegaLayout>
+                    <OmegaNotifications />
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
 
-            {/* User settings pages */}
             <Route
               path="/profile"
               element={
                 <ProtectedRoute>
-                  <Layout>
+                  <OmegaLayout>
                     <ProfilePage />
-                  </Layout>
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
@@ -403,12 +449,18 @@ const AppContent = () => {
               path="/settings"
               element={
                 <ProtectedRoute>
-                  <Layout>
+                  <OmegaLayout>
                     <SettingsPage />
-                  </Layout>
+                  </OmegaLayout>
                 </ProtectedRoute>
               }
             />
+
+            {/* Legacy absolute paths claimed by frameworks (if any). */}
+            {legacyRedirectRoutes}
+
+            {/* Dynamic framework workspaces. */}
+            {frameworkWorkspaceRoutes}
 
             {/* Catch-all 404 */}
             <Route path="*" element={<NotFound />} />
@@ -436,7 +488,6 @@ declare global {
 
 const rootElement = document.getElementById("root");
 if (rootElement) {
-  // Reuse existing root if available (during HMR), otherwise create new one
   if (!window.__reactRoot) {
     window.__reactRoot = createRoot(rootElement);
   }

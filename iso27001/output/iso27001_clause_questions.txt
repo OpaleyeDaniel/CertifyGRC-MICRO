@@ -1,0 +1,91 @@
+============================================================
+CLAUSE 4 — Context of the organisation
+============================================================
+4.1  Q1: Has the organisation determined internal issues that can affect the ISMS (e.g. culture, capabilities, processes)?
+4.1  Q2: Has the organisation determined external issues that can affect the ISMS (e.g. legal, technological, market, partner ecosystem)?
+4.1  Q3: Is the context review performed at planned intervals and when material changes occur?
+4.2  Q1: Are relevant interested parties (e.g. customers, regulators, parent company) identified for the ISMS scope?
+4.2  Q2: Are applicable requirements and expectations of those parties (including which are mandatory) recorded?
+4.3  Q1: Is the ISMS scope defined with boundaries and applicability, linked to the organisation’s context and services?
+4.3  Q2: Is the scope available as documented information and suitable for certification purposes?
+4.4  Q1: Is the ISMS established, implemented, maintained, and improved using the PDCA approach required by the standard?
+4.4  Q2: Are processes and their interactions (inputs/outputs) defined for the ISMS, including for outsourced work?
+
+============================================================
+CLAUSE 5 — Leadership
+============================================================
+5.1  Q1: Is top management accountable for the effectiveness of the ISMS and ensuring policy and objectives align to strategy?
+5.1  Q2: Is resources assignment, risk ownership, and continual improvement direction demonstrated by management?
+5.1  Q3: Does management support integration of ISMS requirements into business processes and promote awareness of importance?
+5.2  Q1: Is an information security policy established, appropriate to the organisation, and approved by top management?
+5.2  Q2: Are commitments to satisfy applicable requirements and continual improvement included in the policy?
+5.2  Q3: Is the policy communicated, available, and (as relevant) acknowledged by interested parties?
+5.3  Q1: Are ISMS roles, responsibilities, and authorities assigned and documented?
+5.3  Q2: Is there an appointed information security function or equivalent with clear mandate?
+
+============================================================
+CLAUSE 6 — Planning
+============================================================
+6.1  Q1: Is the information security risk assessment process defined, including criteria, methods, and ownership of outcomes?
+6.1  Q2: Is the risk treatment plan integrated with the management system and resourced to achieve objectives?
+6.1  Q3: Are opportunities to improve the ISMS considered alongside treatment of information security risks?
+6.1  Q4: Is the link between information security risk results and the statement of applicable controls and objectives explicit and up to date?
+6.2  Q1: Are measurable information security objectives established at relevant functions/levels, consistent with the policy?
+6.2  Q2: Is planning documented for what will be done, resources, responsibilities, timeframes, and how results are evaluated?
+6.2  Q3: How is objective achievement measured and is progress reported to management in a way that supports decisions?
+6.3  Q1: When the ISMS needs change, is the change carried out in a planned manner, considering risk impacts?
+6.3  Q2: Describe a recent change to the ISMS and how information security was considered in planning.
+6.3  Q3: Are change requests linked to the risk assessment and/or management review when they affect scope, assets, or controls?
+
+============================================================
+CLAUSE 7 — Support
+============================================================
+7.1  Q1: Are necessary resources (people, time, money, technology) made available to establish and maintain the ISMS?
+7.1  Q2: Is budget/forecast evidence available showing investment aligned to information security needs?
+7.2  Q1: For persons whose work affects information security, is necessary competence defined and how attainment is determined?
+7.2  Q2: Provide training records, certifications, or gap analyses supporting competence claims for key ISMS roles.
+7.3  Q1: Do relevant personnel understand the ISMS policy, their contribution, and consequences of nonconformity?
+7.3  Q2: Is security awareness content relevant to job role and provided at defined intervals, with metrics where appropriate?
+7.4  Q1: What, when, with whom, and how the organisation will communicate on ISMS matters, including external parties?
+7.4  Q2: Are communications (internal and external) recorded where needed for the ISMS?
+7.5  Q1: Is the extent of documented information determined for the ISMS, including where it is created, updated, and controlled?
+7.5  Q2: Are distribution, access, storage, and retention/ disposition controls applied to protect documented information appropriately?
+
+============================================================
+CLAUSE 8 — Operation
+============================================================
+8.1  Q1: Are information security plans implemented and controls operated as part of the risk treatment plan?
+8.1  Q2: Are changes to planned activities assessed for their impact on the ISMS and controlled (including outsourced work)?
+8.1  Q3: Is control implementation aligned to documented plans and are exceptions tracked?
+8.2  Q1: Are risk assessments performed at planned intervals and on significant change?
+8.2  Q2: Is risk information retained, including how likelihood and impact were derived for significant risks?
+8.2  Q3: Is treatment consistency with methodology reviewed when business context, assets, or threats change meaningfully?
+8.3  Q1: Is a statement of applicable controls (incl. justification for Annex A) maintained and is residual risk owner-approved where needed?
+8.3  Q2: Show evidence of implementation status for the statement of applicable controls, including for suppliers.
+8.3  Q3: If controls are not implemented, is risk treatment decision-making recorded (e.g. risk acceptance) with sign-off?
+
+============================================================
+CLAUSE 9 — Performance evaluation
+============================================================
+9.1  Q1: Are what needs to be monitored and measured, methods, and evaluation criteria for ISMS performance defined?
+9.1  Q2: Are results of monitoring reviewed by appropriate personnel and is evidence of trends retained (e.g. dashboards, reports)?
+9.1  Q3: Is performance data used to support management review and opportunities for improvement?
+9.2  Q1: Is an internal audit programme planned with defined frequency, scope, and criteria, independent to the degree practicable?
+9.2  Q2: Can you provide recent internal audit reports, findings, and evidence of follow-up/closure of nonconformities?
+9.2  Q3: Are auditors competent and do audit records demonstrate ISO 27001 (ISMS) requirements were covered in scope?
+9.3  Q1: Does top management review the ISMS at planned intervals, including inputs (audit, incidents, risk changes) and output decisions (resources, changes)?
+9.3  Q2: Are management review minutes/records of decisions retained and is follow-through visible?
+9.3  Q3: Describe how the outcome of the last review changed priorities or the ISMS within the last cycle.
+
+============================================================
+CLAUSE 10 — Improvement
+============================================================
+10.1  Q1: Does the organisation actively pursue continual improvement of the suitability, adequacy, and effectiveness of the ISMS?
+10.1  Q2: Is improvement data sourced from performance evaluation, lessons learned, and objectives progress?
+10.1  Q3: Are security incidents, near misses, and trends used as inputs to improve controls and the ISMS?
+10.1  Q4: Is there a process to prioritise, assign ownership, and track improvement actions with measurable completion criteria?
+10.2  Q1: When a nonconformity occurs, is the reaction, cause analysis, and corrective action (including need for change) taken?
+10.2  Q2: Provide a corrective action record showing root cause, action plan, review of effectiveness, and updated risks where relevant.
+10.2  Q3: Are nonconformities (including from audits) tracked to closure and is recurrence prevented to the extent practicable?
+10.2  Q4: Are corrective actions completed within target timescales, with re-testing or verification of controls where required?
+

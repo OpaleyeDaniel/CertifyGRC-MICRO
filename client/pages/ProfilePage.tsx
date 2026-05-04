@@ -1,6 +1,9 @@
 import React, { useMemo, useRef, useState } from "react";
+import { User } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { getInitials } from "@/lib/userManagement";
+import { OmegaPage } from "@/components/omega/OmegaPage";
+import { cn } from "@/lib/utils";
 
 export default function ProfilePage() {
   const { currentUser, updateCurrentUser } = useAuth();
@@ -74,176 +77,141 @@ export default function ProfilePage() {
   if (!currentUser) return null;
 
   return (
-    <div style={{ padding: 24, maxWidth: 760 }}>
-      {/* Page header */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          marginBottom: 24,
-          paddingBottom: 16,
-          borderBottom: "0.5px solid var(--border-subtle)",
-        }}
-      >
-        <div>
-          <h1 style={{ fontSize: 18, fontWeight: 500, margin: 0, color: "var(--text-primary)" }}>
-            My profile
-          </h1>
-          <p style={{ fontSize: 13, color: "var(--text-secondary)", margin: "4px 0 0" }}>
-            Manage your personal details and security settings
-          </p>
-        </div>
-        <div style={{ display: "flex", gap: 10 }}>
-          <button className="btn-secondary" onClick={handleDiscard}>
+    <OmegaPage
+      eyebrow="Account"
+      title="My profile"
+      description="Manage your personal details and sign-in. Changes apply to this workspace for your user record."
+      icon={<User className="h-5 w-5" />}
+      actions={
+        <div className="flex flex-wrap items-center gap-2">
+          <button type="button" className="btn-secondary" onClick={handleDiscard}>
             Discard
           </button>
-          <button className="btn-primary" onClick={handleSave}>
+          <button type="button" className="btn-primary" onClick={handleSave}>
             Save changes
           </button>
         </div>
-      </div>
-
-      {/* Message banner */}
-      {message && (
-        <div
-          style={{
-            padding: "10px 14px",
-            borderRadius: 8,
-            marginBottom: 16,
-            fontSize: 13,
-            border: "0.5px solid",
-            background:
-              message.type === "success" ? "var(--color-success-bg)" : "var(--color-danger-bg)",
-            color: message.type === "success" ? "var(--color-success-text)" : "var(--color-danger-text)",
-            borderColor: message.type === "success" ? "var(--color-success-text)" : "var(--color-danger-text)",
-          }}
-        >
-          {message.text}
-        </div>
-      )}
-
-      {/* Avatar block */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 20,
-          padding: 16,
-          marginBottom: 20,
-          background: "var(--bg-secondary)",
-          borderRadius: 10,
-          border: "0.5px solid var(--border-subtle)",
-        }}
-      >
-        {form.avatar ? (
-          <img
-            src={form.avatar}
-            alt="avatar"
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: "50%",
-              objectFit: "cover",
-              flexShrink: 0,
-            }}
-          />
-        ) : (
+      }
+    >
+      <div className="mx-auto max-w-3xl space-y-6">
+        {message && (
           <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: "50%",
-              flexShrink: 0,
-              background: "var(--color-purple-bg)",
-              color: "var(--color-purple-text)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 22,
-              fontWeight: 500,
-            }}
+            role="status"
+            className={cn(
+              "rounded-lg border px-3 py-2.5 text-sm",
+              message.type === "success"
+                ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-900 dark:text-emerald-200"
+                : "border-destructive/30 bg-destructive/10 text-destructive",
+            )}
           >
-            {getInitials(form.fullName)}
+            {message.text}
           </div>
         )}
-        <div>
-          <p style={{ fontSize: 14, fontWeight: 500, margin: "0 0 3px", color: "var(--text-primary)" }}>
-            Profile photo
-          </p>
-          <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "0 0 10px" }}>
-            {avatarExists ? "Looking good!" : "Upload a photo or your initials will be shown"}
-          </p>
-          <div style={{ display: "flex", gap: 8 }}>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="image/*"
-              style={{ display: "none" }}
-              onChange={handleAvatarUpload}
+
+        <div className="flex flex-col gap-5 rounded-2xl border border-border/60 bg-card/60 p-5 shadow-sm sm:flex-row sm:items-center">
+          {form.avatar ? (
+            <img
+              src={form.avatar}
+              alt="Profile"
+              className="h-16 w-16 shrink-0 rounded-full object-cover ring-1 ring-border"
             />
-            <button className="btn-secondary" onClick={() => fileRef.current?.click()}>
-              {avatarExists ? "Change photo" : "Upload photo"}
-            </button>
-            {avatarExists && (
-              <button className="btn-secondary" onClick={() => setForm((f) => ({ ...f, avatar: null }))}>
-                Remove
+          ) : (
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary/15 text-lg font-semibold text-primary">
+              {getInitials(form.fullName)}
+            </div>
+          )}
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold text-foreground">Profile photo</p>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              {avatarExists ? "Your photo is shown across the app." : "Upload a photo, or we show your initials."}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <input
+                ref={fileRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={handleAvatarUpload}
+              />
+              <button type="button" className="btn-secondary" onClick={() => fileRef.current?.click()}>
+                {avatarExists ? "Change photo" : "Upload photo"}
               </button>
-            )}
+              {avatarExists && (
+                <button
+                  type="button"
+                  className="btn-secondary"
+                  onClick={() => setForm((f) => ({ ...f, avatar: null }))}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className="form-label">Full name</label>
+            <input
+              className="form-input"
+              value={form.fullName}
+              onChange={(e) => setForm((f) => ({ ...f, fullName: e.target.value }))}
+            />
+          </div>
+          <div>
+            <label className="form-label">Email</label>
+            <input
+              className="form-input"
+              type="email"
+              value={form.email}
+              onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+            />
+          </div>
+          <div>
+            <label className="form-label">Job title</label>
+            <input
+              className="form-input"
+              value={form.title}
+              onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
+            />
+          </div>
+          <div>
+            <label className="form-label">Role</label>
+            <input
+              className="form-input cursor-not-allowed bg-muted/50 text-muted-foreground"
+              value={currentUser.role || ""}
+              disabled
+              readOnly
+            />
+          </div>
+        </div>
+
+        <div className="border-t border-border/60 pt-6">
+          <h2 className="text-sm font-semibold text-foreground">Change password</h2>
+          <p className="mt-1 text-xs text-muted-foreground">Leave blank to keep your current password.</p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {(
+              [
+                { key: "current" as const, label: "Current password" },
+                { key: "newPass" as const, label: "New password" },
+                { key: "confirm" as const, label: "Confirm new password" },
+              ] as const
+            ).map(({ key, label }) => (
+              <div key={key}>
+                <label className="form-label">{label}</label>
+                <input
+                  className="form-input"
+                  type="password"
+                  placeholder="••••••••"
+                  value={passwords[key]}
+                  onChange={(e) => setPasswords((p) => ({ ...p, [key]: e.target.value }))}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Personal details — 2-col grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 20 }}>
-        <div>
-          <label className="form-label">Full name</label>
-          <input className="form-input" value={form.fullName} onChange={(e) => setForm((f) => ({ ...f, fullName: e.target.value }))} />
-        </div>
-        <div>
-          <label className="form-label">Email</label>
-          <input className="form-input" type="email" value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} />
-        </div>
-        <div>
-          <label className="form-label">Job title</label>
-          <input className="form-input" value={form.title} onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))} />
-        </div>
-        <div>
-          <label className="form-label">Role</label>
-          <input
-            className="form-input"
-            value={currentUser.role || ""}
-            disabled
-            style={{ background: "var(--bg-secondary)", color: "var(--text-secondary)" }}
-          />
-        </div>
-      </div>
-
-      {/* Change password */}
-      <div style={{ borderTop: "0.5px solid var(--border-subtle)", paddingTop: 20, marginBottom: 8 }}>
-        <h2 style={{ fontSize: 14, fontWeight: 500, margin: "0 0 14px", color: "var(--text-primary)" }}>
-          Change password
-        </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
-          {[
-            { key: "current", label: "Current password" },
-            { key: "newPass", label: "New password" },
-            { key: "confirm", label: "Confirm new password" },
-          ].map(({ key, label }) => (
-            <div key={key}>
-              <label className="form-label">{label}</label>
-              <input
-                className="form-input"
-                type="password"
-                placeholder="••••••••"
-                value={(passwords as any)[key]}
-                onChange={(e) => setPasswords((p) => ({ ...p, [key]: e.target.value }))}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </OmegaPage>
   );
 }
 

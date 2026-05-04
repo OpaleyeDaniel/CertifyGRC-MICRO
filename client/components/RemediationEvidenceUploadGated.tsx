@@ -1,23 +1,20 @@
 import { useState, useRef, useMemo } from "react";
-import { CloudUpload, X, FileText, Check, Lock, AlertCircle } from "lucide-react";
+import { CloudUpload, X, FileText, Check, Lock, AlertCircle, FolderUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-
-interface EvidenceFile {
-  name: string;
-  size: number;
-  uploadedAt: string;
-  type: string;
-}
+import { EvidenceSourcePickerModal } from "@/components/integrations/EvidenceSourcePickerModal";
+import { useAuth } from "@/context/AuthContext";
+import type { ExternalFileReference } from "@/lib/integrations/types";
+import type { EvidenceFile as RemediationEvidenceFile } from "@/lib/gapRemediationTypes";
 
 interface RemediationEvidenceUploadGatedProps {
   nistId: string;
   questionId: string;
   expectedCompletionDate: string;
-  onFilesAdded: (files: EvidenceFile[]) => void;
-  uploadedFiles?: EvidenceFile[];
+  onFilesAdded: (files: RemediationEvidenceFile[]) => void;
+  uploadedFiles?: RemediationEvidenceFile[];
   isEarlySubmissionApproved: boolean;
 }
 
@@ -29,8 +26,10 @@ export function RemediationEvidenceUploadGated({
   uploadedFiles = [],
   isEarlySubmissionApproved,
 }: RemediationEvidenceUploadGatedProps) {
+  const { currentUser } = useAuth();
   const [isDragging, setIsDragging] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const [sourcePickerOpen, setSourcePickerOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
@@ -156,7 +155,7 @@ export function RemediationEvidenceUploadGated({
   const handleFileSelect = async (files: FileList | null) => {
     if (!files || files.length === 0) return;
 
-    const validFiles: EvidenceFile[] = [];
+    const validFiles: RemediationEvidenceFile[] = [];
     const errors: string[] = [];
 
     for (let i = 0; i < files.length; i++) {
@@ -293,7 +292,54 @@ export function RemediationEvidenceUploadGated({
         )}
       </div>
 
-      {/* Upload Zone - Locked State */}
+      {isUnlocked && (
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted-foreground">Add from this device (below) or from a connected cloud app.</p>
+          <Button type="button" variant="secondary" className="shrink-0 gap-2" onClick={() => setSourcePickerOpen(true)}>
+            <FolderUp className="h-4 w-4" />
+            Choose evidence source
+          </Button>
+        </div>
+      )}
+
+      <EvidenceSourcePickerModal
+        open={sourcePickerOpen}
+        onOpenChange={setSourcePickerOpen}
+        context={{ surface: "nist-csf/gap-remediation", frameworkId: "nist-csf", questionId, nistId }}
+        localUploadDisabled={!isUnlocked}
+        onLocalFiles={(fileList) => {
+          if (!isUnlocked) return;
+          const dt = new DataTransfer();
+          fileList.forEach((f) => dt.items.add(f));
+          void handleFileSelect(dt.files);
+        }}
+        onExternal={(ref: ExternalFileReference, mode) => {
+          if (!isUnlocked) return;
+          setIsUploading(true);
+          window.setTimeout(() => {
+            onFilesAdded([
+              {
+                name: ref.name,
+                size: ref.sizeBytes,
+                uploadedAt: new Date().toISOString(),
+                type: ref.mimeType,
+                url: `extern://${ref.providerId}/${ref.externalFileId}`,
+                sourceKind: "cloud",
+                storageMode: mode,
+                providerId: ref.providerId,
+                externalFileId: ref.externalFileId,
+                externalPath: ref.path,
+                attachedBy: currentUser?.fullName ?? currentUser?.email,
+              },
+            ]);
+            setIsUploading(false);
+            toast({ title: "Evidence attached", description: ref.name });
+          }, 400);
+        }}
+        title="Add remediation evidence"
+      />
+
+      {/* Upload Zone - Locked State — drag/drop and click still use local file input */}
       <div
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}

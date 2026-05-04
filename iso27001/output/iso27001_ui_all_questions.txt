@@ -1,0 +1,564 @@
+ISO 27001 assessment questions as shown in the CertifyGRC UI.
+Source: client/frameworks/iso27001/data/clauses.ts + annexA.ts (field: text).
+This is not the same dataset as iso27001/data/clauses.json or annex_a.json.
+
+============================================================
+CLAUSE 4 — Context of the organisation
+============================================================
+
+4.1  Q1 [c4-1-internal-external-issues]: Has the organisation identified the internal and external issues that are relevant to its purpose and that affect its ability to achieve the intended outcomes of the ISMS?
+4.1  Q2 [c4-1-context-review]: How frequently is the context of the organisation reviewed and updated, and is there evidence of that review?
+4.2  Q3 [c4-2-interested-parties]: Has the organisation identified interested parties relevant to the ISMS and their information security, legal, regulatory and contractual requirements?
+4.2  Q4 [c4-2-legal-register]: Is there a maintained register of applicable legal, regulatory and contractual information security obligations?
+4.3  Q5 [c4-3-scope-defined]: Is the scope of the ISMS formally defined, documented and approved, covering processes, locations, assets, and interfaces with third parties?
+4.3  Q6 [c4-3-scope-exclusions]: Where parts of the organisation are excluded from the ISMS, are the exclusions explicitly documented and justified?
+4.3  Q7 [c4-3-interfaces-dependencies]: Have interfaces and dependencies with external parties (cloud providers, suppliers, subsidiaries, regulators) been mapped into the scope?
+4.4  Q8 [c4-4-isms-established]: Is the ISMS established, implemented, maintained and continually improved in line with ISO 27001?
+
+============================================================
+CLAUSE 5 — Leadership
+============================================================
+
+5.1  Q1 [c5-1-commitment]: Does top management demonstrate leadership and commitment to the ISMS through policy approval, resource allocation and visible sponsorship?
+5.2  Q2 [c5-2-policy-approved]: Has an information security policy been approved by top management, documented, communicated, and made available to interested parties?
+5.2  Q3 [c5-2-policy-review]: How frequently is the information security policy reviewed and re-approved?
+5.3  Q4 [c5-3-roles-responsibilities]: Are information security roles, responsibilities and authorities assigned and communicated within the organisation?
+5.3  Q5 [c5-3-isms-manager-designated]: Is a single individual formally designated with the authority to ensure ISMS conformity and to report ISMS performance to top management?
+
+============================================================
+CLAUSE 6 — Planning
+============================================================
+
+6.1.1  Q1 [c6-1-1-general-risks]: Has the organisation determined the risks and opportunities that need to be addressed to ensure the ISMS can achieve its intended outcomes?
+6.1.2  Q2 [c6-1-2-risk-methodology]: Is there a documented, repeatable information security risk assessment process, including criteria for accepting and performing risk assessments?
+6.1.2  Q3 [c6-1-2-repeatability]: Does the methodology produce consistent, valid and comparable results when applied by different assessors across the ISMS scope?
+6.1.3  Q4 [c6-1-3-risk-treatment-process]: Is there a documented process for selecting risk treatment options and determining the controls necessary to implement them?
+6.1.3  Q5 [c6-1-3-soa-produced]: Has a Statement of Applicability been produced that lists all Annex A controls, justifications for inclusion/exclusion, and implementation status?
+6.1.3  Q6 [c6-1-3-treatment-plan-approved]: Is the risk treatment plan approved by risk owners and residual risk accepted by accountable management?
+6.2  Q7 [c6-2-objectives]: Have measurable information security objectives been established, consistent with the policy, and communicated to relevant functions?
+6.2  Q8 [c6-2-objectives-tracking]: Are security objectives monitored, measured and reported to top management on a defined cadence?
+6.3  Q9 [c6-3-planning-changes]: Are changes to the ISMS planned in a structured way, considering purpose, consequences, resources, and responsibilities?
+
+============================================================
+CLAUSE 7 — Support
+============================================================
+
+7.1  Q1 [c7-1-resources]: Have adequate resources been determined and provided for the establishment, implementation, maintenance and continual improvement of the ISMS?
+7.2  Q2 [c7-2-competence]: Have competency requirements been defined for personnel performing ISMS-relevant roles, and is competence tracked and evidenced?
+7.3  Q3 [c7-3-awareness]: Are personnel aware of the security policy, their contribution to the ISMS, and the implications of not conforming?
+7.4  Q4 [c7-4-communication]: Has a plan been defined for internal and external communications relevant to the ISMS (what, when, to whom, by whom)?
+7.5.1  Q5 [c7-5-1-documented-info-general]: Does the ISMS include the documented information required by the standard and that determined by the organisation as necessary for its effectiveness?
+7.5.2  Q6 [c7-5-2-creation-update]: Are documented information items properly identified (title, author, date, version) and reviewed and approved for suitability?
+7.5.3  Q7 [c7-5-3-control-of-documented]: Are documented information items protected against loss of confidentiality, improper use, or loss of integrity — including distribution, access, retrieval, retention and disposition?
+
+============================================================
+CLAUSE 8 — Operation
+============================================================  
+
+8.1  Q1 [c8-1-operational-planning]: Does the organisation plan, implement and control the processes needed to meet ISMS requirements and to implement the actions determined in 6.1?
+8.1  Q2 [c8-1-outsourced]: Are outsourced processes that affect the ISMS determined and controlled?
+8.2  Q3 [c8-2-risk-assessments-executed]: Are information security risk assessments performed at planned intervals or when significant changes are proposed or occur?
+8.3  Q4 [c8-3-treatment-plan-implemented]: Is the information security risk treatment plan implemented, with action progress tracked and residual risks reassessed?
+
+============================================================
+CLAUSE 9 — Performance evaluation
+============================================================
+
+9.1  Q1 [c9-1-monitoring]: Has the organisation determined what needs to be monitored, the methods, frequencies, who analyses results and how they are reported?
+9.2  Q2 [c9-2-internal-audit-program]: Is there an internal audit programme covering scope, criteria, frequency and methods, and are auditors independent of the areas they audit?
+9.2  Q3 [c9-2-internal-audits-executed]: Are audits conducted according to the plan, with results documented, retained and reported to management?
+9.3  Q4 [c9-3-management-review-inputs]: Do management reviews consider all required inputs: status of actions, changes in context, performance indicators, feedback from interested parties, risk results, opportunities for improvement?
+9.3  Q5 [c9-3-management-review-outputs]: Do management reviews result in documented decisions and actions related to continual improvement and changes to the ISMS?
+
+============================================================
+CLAUSE 10 — Improvement
+============================================================
+
+10.1  Q1 [c10-1-continual-improvement]: Does the organisation continually improve the suitability, adequacy and effectiveness of the ISMS?
+10.2  Q2 [c10-2-nonconformity]: When a nonconformity occurs, does the organisation react, evaluate the need for action, implement the action, review effectiveness, update risks, and make changes to the ISMS as needed?
+10.2  Q3 [c10-2-recurrence-prevention]: Is there evidence that corrective actions prevent recurrence (effectiveness verification, trend analysis)?
+
+============================================================
+ANNEX A — A.5 Organisational controls
+============================================================
+
+A.5.1  Q1 [a-5-1-existence]: Does the organisation have an identified approach to implement Policies for information security (A.5.1)?
+A.5.1  Q2 [a-5-1-policy]: Is there a documented policy, standard or procedure that governs Policies for information security consistent with ISO 27001 A.5.1?
+A.5.1  Q3 [a-5-1-implementation]: Is Policies for information security implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.1  Q4 [a-5-1-monitoring]: Is the effectiveness of Policies for information security monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.1  Q5 [a-5-1-review]: Is Policies for information security reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.2  Q1 [a-5-2-existence]: Does the organisation have an identified approach to implement Information security roles and responsibilities (A.5.2)?
+A.5.2  Q2 [a-5-2-policy]: Is there a documented policy, standard or procedure that governs Information security roles and responsibilities consistent with ISO 27001 A.5.2?
+A.5.2  Q3 [a-5-2-implementation]: Is Information security roles and responsibilities implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.2  Q4 [a-5-2-monitoring]: Is the effectiveness of Information security roles and responsibilities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.2  Q5 [a-5-2-review]: Is Information security roles and responsibilities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.3  Q1 [a-5-3-existence]: Does the organisation have an identified approach to implement Segregation of duties (A.5.3)?
+A.5.3  Q2 [a-5-3-policy]: Is there a documented policy, standard or procedure that governs Segregation of duties consistent with ISO 27001 A.5.3?
+A.5.3  Q3 [a-5-3-implementation]: Is Segregation of duties implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.3  Q4 [a-5-3-monitoring]: Is the effectiveness of Segregation of duties monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.3  Q5 [a-5-3-review]: Is Segregation of duties reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.4  Q1 [a-5-4-existence]: Does the organisation have an identified approach to implement Management responsibilities (A.5.4)?
+A.5.4  Q2 [a-5-4-policy]: Is there a documented policy, standard or procedure that governs Management responsibilities consistent with ISO 27001 A.5.4?
+A.5.4  Q3 [a-5-4-implementation]: Is Management responsibilities implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.4  Q4 [a-5-4-monitoring]: Is the effectiveness of Management responsibilities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.4  Q5 [a-5-4-review]: Is Management responsibilities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.5  Q1 [a-5-5-existence]: Does the organisation have an identified approach to implement Contact with authorities (A.5.5)?
+A.5.5  Q2 [a-5-5-policy]: Is there a documented policy, standard or procedure that governs Contact with authorities consistent with ISO 27001 A.5.5?
+A.5.5  Q3 [a-5-5-implementation]: Is Contact with authorities implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.5  Q4 [a-5-5-monitoring]: Is the effectiveness of Contact with authorities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.5  Q5 [a-5-5-review]: Is Contact with authorities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.6  Q1 [a-5-6-existence]: Does the organisation have an identified approach to implement Contact with special interest groups (A.5.6)?
+A.5.6  Q2 [a-5-6-policy]: Is there a documented policy, standard or procedure that governs Contact with special interest groups consistent with ISO 27001 A.5.6?
+A.5.6  Q3 [a-5-6-implementation]: Is Contact with special interest groups implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.6  Q4 [a-5-6-monitoring]: Is the effectiveness of Contact with special interest groups monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.6  Q5 [a-5-6-review]: Is Contact with special interest groups reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.7  Q1 [a-5-7-existence]: Does the organisation have an identified approach to implement Threat intelligence (A.5.7)?
+A.5.7  Q2 [a-5-7-policy]: Is there a documented policy, standard or procedure that governs Threat intelligence consistent with ISO 27001 A.5.7?
+A.5.7  Q3 [a-5-7-implementation]: Is Threat intelligence implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.7  Q4 [a-5-7-monitoring]: Is the effectiveness of Threat intelligence monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.7  Q5 [a-5-7-review]: Is Threat intelligence reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.8  Q1 [a-5-8-existence]: Does the organisation have an identified approach to implement Information security in project management (A.5.8)?
+A.5.8  Q2 [a-5-8-policy]: Is there a documented policy, standard or procedure that governs Information security in project management consistent with ISO 27001 A.5.8?
+A.5.8  Q3 [a-5-8-implementation]: Is Information security in project management implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.8  Q4 [a-5-8-monitoring]: Is the effectiveness of Information security in project management monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.8  Q5 [a-5-8-review]: Is Information security in project management reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.9  Q1 [a-5-9-existence]: Does the organisation have an identified approach to implement Inventory of information and other associated assets (A.5.9)?
+A.5.9  Q2 [a-5-9-policy]: Is there a documented policy, standard or procedure that governs Inventory of information and other associated assets consistent with ISO 27001 A.5.9?
+A.5.9  Q3 [a-5-9-implementation]: Is Inventory of information and other associated assets implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.9  Q4 [a-5-9-monitoring]: Is the effectiveness of Inventory of information and other associated assets monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.9  Q5 [a-5-9-review]: Is Inventory of information and other associated assets reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.10  Q1 [a-5-10-existence]: Does the organisation have an identified approach to implement Acceptable use of information and other associated assets (A.5.10)?
+A.5.10  Q2 [a-5-10-policy]: Is there a documented policy, standard or procedure that governs Acceptable use of information and other associated assets consistent with ISO 27001 A.5.10?
+A.5.10  Q3 [a-5-10-implementation]: Is Acceptable use of information and other associated assets implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.10  Q4 [a-5-10-monitoring]: Is the effectiveness of Acceptable use of information and other associated assets monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.10  Q5 [a-5-10-review]: Is Acceptable use of information and other associated assets reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.11  Q1 [a-5-11-existence]: Does the organisation have an identified approach to implement Return of assets (A.5.11)?
+A.5.11  Q2 [a-5-11-policy]: Is there a documented policy, standard or procedure that governs Return of assets consistent with ISO 27001 A.5.11?
+A.5.11  Q3 [a-5-11-implementation]: Is Return of assets implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.11  Q4 [a-5-11-monitoring]: Is the effectiveness of Return of assets monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.11  Q5 [a-5-11-review]: Is Return of assets reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.12  Q1 [a-5-12-existence]: Does the organisation have an identified approach to implement Classification of information (A.5.12)?
+A.5.12  Q2 [a-5-12-policy]: Is there a documented policy, standard or procedure that governs Classification of information consistent with ISO 27001 A.5.12?
+A.5.12  Q3 [a-5-12-implementation]: Is Classification of information implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.12  Q4 [a-5-12-monitoring]: Is the effectiveness of Classification of information monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.12  Q5 [a-5-12-review]: Is Classification of information reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.13  Q1 [a-5-13-existence]: Does the organisation have an identified approach to implement Labelling of information (A.5.13)?
+A.5.13  Q2 [a-5-13-policy]: Is there a documented policy, standard or procedure that governs Labelling of information consistent with ISO 27001 A.5.13?
+A.5.13  Q3 [a-5-13-implementation]: Is Labelling of information implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.13  Q4 [a-5-13-monitoring]: Is the effectiveness of Labelling of information monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.13  Q5 [a-5-13-review]: Is Labelling of information reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.14  Q1 [a-5-14-existence]: Does the organisation have an identified approach to implement Information transfer (A.5.14)?
+A.5.14  Q2 [a-5-14-policy]: Is there a documented policy, standard or procedure that governs Information transfer consistent with ISO 27001 A.5.14?
+A.5.14  Q3 [a-5-14-implementation]: Is Information transfer implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.14  Q4 [a-5-14-monitoring]: Is the effectiveness of Information transfer monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.14  Q5 [a-5-14-review]: Is Information transfer reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.15  Q1 [a-5-15-existence]: Does the organisation have an identified approach to implement Access control (A.5.15)?
+A.5.15  Q2 [a-5-15-policy]: Is there a documented policy, standard or procedure that governs Access control consistent with ISO 27001 A.5.15?
+A.5.15  Q3 [a-5-15-implementation]: Is Access control implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.15  Q4 [a-5-15-monitoring]: Is the effectiveness of Access control monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.15  Q5 [a-5-15-review]: Is Access control reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.16  Q1 [a-5-16-existence]: Does the organisation have an identified approach to implement Identity management (A.5.16)?
+A.5.16  Q2 [a-5-16-policy]: Is there a documented policy, standard or procedure that governs Identity management consistent with ISO 27001 A.5.16?
+A.5.16  Q3 [a-5-16-implementation]: Is Identity management implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.16  Q4 [a-5-16-monitoring]: Is the effectiveness of Identity management monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.16  Q5 [a-5-16-review]: Is Identity management reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.17  Q1 [a-5-17-existence]: Does the organisation have an identified approach to implement Authentication information (A.5.17)?
+A.5.17  Q2 [a-5-17-policy]: Is there a documented policy, standard or procedure that governs Authentication information consistent with ISO 27001 A.5.17?
+A.5.17  Q3 [a-5-17-implementation]: Is Authentication information implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.17  Q4 [a-5-17-monitoring]: Is the effectiveness of Authentication information monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.17  Q5 [a-5-17-review]: Is Authentication information reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.18  Q1 [a-5-18-existence]: Does the organisation have an identified approach to implement Access rights (A.5.18)?
+A.5.18  Q2 [a-5-18-policy]: Is there a documented policy, standard or procedure that governs Access rights consistent with ISO 27001 A.5.18?
+A.5.18  Q3 [a-5-18-implementation]: Is Access rights implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.18  Q4 [a-5-18-monitoring]: Is the effectiveness of Access rights monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.18  Q5 [a-5-18-review]: Is Access rights reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.19  Q1 [a-5-19-existence]: Does the organisation have an identified approach to implement Information security in supplier relationships (A.5.19)?
+A.5.19  Q2 [a-5-19-policy]: Is there a documented policy, standard or procedure that governs Information security in supplier relationships consistent with ISO 27001 A.5.19?
+A.5.19  Q3 [a-5-19-implementation]: Is Information security in supplier relationships implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.19  Q4 [a-5-19-monitoring]: Is the effectiveness of Information security in supplier relationships monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.19  Q5 [a-5-19-review]: Is Information security in supplier relationships reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.20  Q1 [a-5-20-existence]: Does the organisation have an identified approach to implement Addressing information security within supplier agreements (A.5.20)?
+A.5.20  Q2 [a-5-20-policy]: Is there a documented policy, standard or procedure that governs Addressing information security within supplier agreements consistent with ISO 27001 A.5.20?
+A.5.20  Q3 [a-5-20-implementation]: Is Addressing information security within supplier agreements implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.20  Q4 [a-5-20-monitoring]: Is the effectiveness of Addressing information security within supplier agreements monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.20  Q5 [a-5-20-review]: Is Addressing information security within supplier agreements reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.21  Q1 [a-5-21-existence]: Does the organisation have an identified approach to implement Managing information security in the ICT supply chain (A.5.21)?
+A.5.21  Q2 [a-5-21-policy]: Is there a documented policy, standard or procedure that governs Managing information security in the ICT supply chain consistent with ISO 27001 A.5.21?
+A.5.21  Q3 [a-5-21-implementation]: Is Managing information security in the ICT supply chain implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.21  Q4 [a-5-21-monitoring]: Is the effectiveness of Managing information security in the ICT supply chain monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.21  Q5 [a-5-21-review]: Is Managing information security in the ICT supply chain reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.22  Q1 [a-5-22-existence]: Does the organisation have an identified approach to implement Monitoring, review and change management of supplier services (A.5.22)?
+A.5.22  Q2 [a-5-22-policy]: Is there a documented policy, standard or procedure that governs Monitoring, review and change management of supplier services consistent with ISO 27001 A.5.22?
+A.5.22  Q3 [a-5-22-implementation]: Is Monitoring, review and change management of supplier services implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.22  Q4 [a-5-22-monitoring]: Is the effectiveness of Monitoring, review and change management of supplier services monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.22  Q5 [a-5-22-review]: Is Monitoring, review and change management of supplier services reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.23  Q1 [a-5-23-existence]: Does the organisation have an identified approach to implement Information security for use of cloud services (A.5.23)?
+A.5.23  Q2 [a-5-23-policy]: Is there a documented policy, standard or procedure that governs Information security for use of cloud services consistent with ISO 27001 A.5.23?
+A.5.23  Q3 [a-5-23-implementation]: Is Information security for use of cloud services implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.23  Q4 [a-5-23-monitoring]: Is the effectiveness of Information security for use of cloud services monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.23  Q5 [a-5-23-review]: Is Information security for use of cloud services reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.24  Q1 [a-5-24-existence]: Does the organisation have an identified approach to implement Information security incident management planning and preparation (A.5.24)?
+A.5.24  Q2 [a-5-24-policy]: Is there a documented policy, standard or procedure that governs Information security incident management planning and preparation consistent with ISO 27001 A.5.24?
+A.5.24  Q3 [a-5-24-implementation]: Is Information security incident management planning and preparation implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.24  Q4 [a-5-24-monitoring]: Is the effectiveness of Information security incident management planning and preparation monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.24  Q5 [a-5-24-review]: Is Information security incident management planning and preparation reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.25  Q1 [a-5-25-existence]: Does the organisation have an identified approach to implement Assessment and decision on information security events (A.5.25)?
+A.5.25  Q2 [a-5-25-policy]: Is there a documented policy, standard or procedure that governs Assessment and decision on information security events consistent with ISO 27001 A.5.25?
+A.5.25  Q3 [a-5-25-implementation]: Is Assessment and decision on information security events implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.25  Q4 [a-5-25-monitoring]: Is the effectiveness of Assessment and decision on information security events monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.25  Q5 [a-5-25-review]: Is Assessment and decision on information security events reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.26  Q1 [a-5-26-existence]: Does the organisation have an identified approach to implement Response to information security incidents (A.5.26)?
+A.5.26  Q2 [a-5-26-policy]: Is there a documented policy, standard or procedure that governs Response to information security incidents consistent with ISO 27001 A.5.26?
+A.5.26  Q3 [a-5-26-implementation]: Is Response to information security incidents implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.26  Q4 [a-5-26-monitoring]: Is the effectiveness of Response to information security incidents monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.26  Q5 [a-5-26-review]: Is Response to information security incidents reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.27  Q1 [a-5-27-existence]: Does the organisation have an identified approach to implement Learning from information security incidents (A.5.27)?
+A.5.27  Q2 [a-5-27-policy]: Is there a documented policy, standard or procedure that governs Learning from information security incidents consistent with ISO 27001 A.5.27?
+A.5.27  Q3 [a-5-27-implementation]: Is Learning from information security incidents implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.27  Q4 [a-5-27-monitoring]: Is the effectiveness of Learning from information security incidents monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.27  Q5 [a-5-27-review]: Is Learning from information security incidents reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.28  Q1 [a-5-28-existence]: Does the organisation have an identified approach to implement Collection of evidence (A.5.28)?
+A.5.28  Q2 [a-5-28-policy]: Is there a documented policy, standard or procedure that governs Collection of evidence consistent with ISO 27001 A.5.28?
+A.5.28  Q3 [a-5-28-implementation]: Is Collection of evidence implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.28  Q4 [a-5-28-monitoring]: Is the effectiveness of Collection of evidence monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.28  Q5 [a-5-28-review]: Is Collection of evidence reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.29  Q1 [a-5-29-existence]: Does the organisation have an identified approach to implement Information security during disruption (A.5.29)?
+A.5.29  Q2 [a-5-29-policy]: Is there a documented policy, standard or procedure that governs Information security during disruption consistent with ISO 27001 A.5.29?
+A.5.29  Q3 [a-5-29-implementation]: Is Information security during disruption implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.29  Q4 [a-5-29-monitoring]: Is the effectiveness of Information security during disruption monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.29  Q5 [a-5-29-review]: Is Information security during disruption reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.30  Q1 [a-5-30-existence]: Does the organisation have an identified approach to implement ICT readiness for business continuity (A.5.30)?
+A.5.30  Q2 [a-5-30-policy]: Is there a documented policy, standard or procedure that governs ICT readiness for business continuity consistent with ISO 27001 A.5.30?
+A.5.30  Q3 [a-5-30-implementation]: Is ICT readiness for business continuity implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.30  Q4 [a-5-30-monitoring]: Is the effectiveness of ICT readiness for business continuity monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.30  Q5 [a-5-30-review]: Is ICT readiness for business continuity reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.31  Q1 [a-5-31-existence]: Does the organisation have an identified approach to implement Legal, statutory, regulatory and contractual requirements (A.5.31)?
+A.5.31  Q2 [a-5-31-policy]: Is there a documented policy, standard or procedure that governs Legal, statutory, regulatory and contractual requirements consistent with ISO 27001 A.5.31?
+A.5.31  Q3 [a-5-31-implementation]: Is Legal, statutory, regulatory and contractual requirements implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.31  Q4 [a-5-31-monitoring]: Is the effectiveness of Legal, statutory, regulatory and contractual requirements monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.31  Q5 [a-5-31-review]: Is Legal, statutory, regulatory and contractual requirements reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.32  Q1 [a-5-32-existence]: Does the organisation have an identified approach to implement Intellectual property rights (A.5.32)?
+A.5.32  Q2 [a-5-32-policy]: Is there a documented policy, standard or procedure that governs Intellectual property rights consistent with ISO 27001 A.5.32?
+A.5.32  Q3 [a-5-32-implementation]: Is Intellectual property rights implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.32  Q4 [a-5-32-monitoring]: Is the effectiveness of Intellectual property rights monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.32  Q5 [a-5-32-review]: Is Intellectual property rights reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.33  Q1 [a-5-33-existence]: Does the organisation have an identified approach to implement Protection of records (A.5.33)?
+A.5.33  Q2 [a-5-33-policy]: Is there a documented policy, standard or procedure that governs Protection of records consistent with ISO 27001 A.5.33?
+A.5.33  Q3 [a-5-33-implementation]: Is Protection of records implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.33  Q4 [a-5-33-monitoring]: Is the effectiveness of Protection of records monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.33  Q5 [a-5-33-review]: Is Protection of records reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.34  Q1 [a-5-34-existence]: Does the organisation have an identified approach to implement Privacy and protection of PII (A.5.34)?
+A.5.34  Q2 [a-5-34-policy]: Is there a documented policy, standard or procedure that governs Privacy and protection of PII consistent with ISO 27001 A.5.34?
+A.5.34  Q3 [a-5-34-implementation]: Is Privacy and protection of PII implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.34  Q4 [a-5-34-monitoring]: Is the effectiveness of Privacy and protection of PII monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.34  Q5 [a-5-34-review]: Is Privacy and protection of PII reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.35  Q1 [a-5-35-existence]: Does the organisation have an identified approach to implement Independent review of information security (A.5.35)?
+A.5.35  Q2 [a-5-35-policy]: Is there a documented policy, standard or procedure that governs Independent review of information security consistent with ISO 27001 A.5.35?
+A.5.35  Q3 [a-5-35-implementation]: Is Independent review of information security implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.35  Q4 [a-5-35-monitoring]: Is the effectiveness of Independent review of information security monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.35  Q5 [a-5-35-review]: Is Independent review of information security reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.36  Q1 [a-5-36-existence]: Does the organisation have an identified approach to implement Compliance with policies, rules and standards for information security (A.5.36)?
+A.5.36  Q2 [a-5-36-policy]: Is there a documented policy, standard or procedure that governs Compliance with policies, rules and standards for information security consistent with ISO 27001 A.5.36?
+A.5.36  Q3 [a-5-36-implementation]: Is Compliance with policies, rules and standards for information security implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.36  Q4 [a-5-36-monitoring]: Is the effectiveness of Compliance with policies, rules and standards for information security monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.36  Q5 [a-5-36-review]: Is Compliance with policies, rules and standards for information security reviewed at planned intervals and after significant changes, with documented outcomes?
+A.5.37  Q1 [a-5-37-existence]: Does the organisation have an identified approach to implement Documented operating procedures (A.5.37)?
+A.5.37  Q2 [a-5-37-policy]: Is there a documented policy, standard or procedure that governs Documented operating procedures consistent with ISO 27001 A.5.37?
+A.5.37  Q3 [a-5-37-implementation]: Is Documented operating procedures implemented in practice across the ISMS scope (people, processes, technology)?
+A.5.37  Q4 [a-5-37-monitoring]: Is the effectiveness of Documented operating procedures monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.5.37  Q5 [a-5-37-review]: Is Documented operating procedures reviewed at planned intervals and after significant changes, with documented outcomes?
+
+============================================================
+ANNEX A — A.6 People controls
+============================================================
+
+A.6.1  Q1 [a-6-1-existence]: Does the organisation have an identified approach to implement Screening (A.6.1)?
+A.6.1  Q2 [a-6-1-policy]: Is there a documented policy, standard or procedure that governs Screening consistent with ISO 27001 A.6.1?
+A.6.1  Q3 [a-6-1-implementation]: Is Screening implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.1  Q4 [a-6-1-monitoring]: Is the effectiveness of Screening monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.1  Q5 [a-6-1-review]: Is Screening reviewed at planned intervals and after significant changes, with documented outcomes?
+A.6.2  Q1 [a-6-2-existence]: Does the organisation have an identified approach to implement Terms and conditions of employment (A.6.2)?
+A.6.2  Q2 [a-6-2-policy]: Is there a documented policy, standard or procedure that governs Terms and conditions of employment consistent with ISO 27001 A.6.2?
+A.6.2  Q3 [a-6-2-implementation]: Is Terms and conditions of employment implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.2  Q4 [a-6-2-monitoring]: Is the effectiveness of Terms and conditions of employment monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.2  Q5 [a-6-2-review]: Is Terms and conditions of employment reviewed at planned intervals and after significant changes, with documented outcomes?
+A.6.3  Q1 [a-6-3-existence]: Does the organisation have an identified approach to implement Information security awareness, education and training (A.6.3)?
+A.6.3  Q2 [a-6-3-policy]: Is there a documented policy, standard or procedure that governs Information security awareness, education and training consistent with ISO 27001 A.6.3?
+A.6.3  Q3 [a-6-3-implementation]: Is Information security awareness, education and training implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.3  Q4 [a-6-3-monitoring]: Is the effectiveness of Information security awareness, education and training monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.3  Q5 [a-6-3-review]: Is Information security awareness, education and training reviewed at planned intervals and after significant changes, with documented outcomes?
+A.6.4  Q1 [a-6-4-existence]: Does the organisation have an identified approach to implement Disciplinary process (A.6.4)?
+A.6.4  Q2 [a-6-4-policy]: Is there a documented policy, standard or procedure that governs Disciplinary process consistent with ISO 27001 A.6.4?
+A.6.4  Q3 [a-6-4-implementation]: Is Disciplinary process implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.4  Q4 [a-6-4-monitoring]: Is the effectiveness of Disciplinary process monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.4  Q5 [a-6-4-review]: Is Disciplinary process reviewed at planned intervals and after significant changes, with documented outcomes?
+A.6.5  Q1 [a-6-5-existence]: Does the organisation have an identified approach to implement Responsibilities after termination or change of employment (A.6.5)?
+A.6.5  Q2 [a-6-5-policy]: Is there a documented policy, standard or procedure that governs Responsibilities after termination or change of employment consistent with ISO 27001 A.6.5?
+A.6.5  Q3 [a-6-5-implementation]: Is Responsibilities after termination or change of employment implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.5  Q4 [a-6-5-monitoring]: Is the effectiveness of Responsibilities after termination or change of employment monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.5  Q5 [a-6-5-review]: Is Responsibilities after termination or change of employment reviewed at planned intervals and after significant changes, with documented outcomes?
+A.6.6  Q1 [a-6-6-existence]: Does the organisation have an identified approach to implement Confidentiality or non-disclosure agreements (A.6.6)?
+A.6.6  Q2 [a-6-6-policy]: Is there a documented policy, standard or procedure that governs Confidentiality or non-disclosure agreements consistent with ISO 27001 A.6.6?
+A.6.6  Q3 [a-6-6-implementation]: Is Confidentiality or non-disclosure agreements implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.6  Q4 [a-6-6-monitoring]: Is the effectiveness of Confidentiality or non-disclosure agreements monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.6  Q5 [a-6-6-review]: Is Confidentiality or non-disclosure agreements reviewed at planned intervals and after significant changes, with documented outcomes?
+A.6.7  Q1 [a-6-7-existence]: Does the organisation have an identified approach to implement Remote working (A.6.7)?
+A.6.7  Q2 [a-6-7-policy]: Is there a documented policy, standard or procedure that governs Remote working consistent with ISO 27001 A.6.7?
+A.6.7  Q3 [a-6-7-implementation]: Is Remote working implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.7  Q4 [a-6-7-monitoring]: Is the effectiveness of Remote working monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.7  Q5 [a-6-7-review]: Is Remote working reviewed at planned intervals and after significant changes, with documented outcomes?
+A.6.8  Q1 [a-6-8-existence]: Does the organisation have an identified approach to implement Information security event reporting (A.6.8)?
+A.6.8  Q2 [a-6-8-policy]: Is there a documented policy, standard or procedure that governs Information security event reporting consistent with ISO 27001 A.6.8?
+A.6.8  Q3 [a-6-8-implementation]: Is Information security event reporting implemented in practice across the ISMS scope (people, processes, technology)?
+A.6.8  Q4 [a-6-8-monitoring]: Is the effectiveness of Information security event reporting monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.6.8  Q5 [a-6-8-review]: Is Information security event reporting reviewed at planned intervals and after significant changes, with documented outcomes?
+
+============================================================
+ANNEX A — A.7 Physical controls
+============================================================
+
+A.7.1  Q1 [a-7-1-existence]: Does the organisation have an identified approach to implement Physical security perimeters (A.7.1)?
+A.7.1  Q2 [a-7-1-policy]: Is there a documented policy, standard or procedure that governs Physical security perimeters consistent with ISO 27001 A.7.1?
+A.7.1  Q3 [a-7-1-implementation]: Is Physical security perimeters implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.1  Q4 [a-7-1-monitoring]: Is the effectiveness of Physical security perimeters monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.1  Q5 [a-7-1-review]: Is Physical security perimeters reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.2  Q1 [a-7-2-existence]: Does the organisation have an identified approach to implement Physical entry (A.7.2)?
+A.7.2  Q2 [a-7-2-policy]: Is there a documented policy, standard or procedure that governs Physical entry consistent with ISO 27001 A.7.2?
+A.7.2  Q3 [a-7-2-implementation]: Is Physical entry implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.2  Q4 [a-7-2-monitoring]: Is the effectiveness of Physical entry monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.2  Q5 [a-7-2-review]: Is Physical entry reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.3  Q1 [a-7-3-existence]: Does the organisation have an identified approach to implement Securing offices, rooms and facilities (A.7.3)?
+A.7.3  Q2 [a-7-3-policy]: Is there a documented policy, standard or procedure that governs Securing offices, rooms and facilities consistent with ISO 27001 A.7.3?
+A.7.3  Q3 [a-7-3-implementation]: Is Securing offices, rooms and facilities implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.3  Q4 [a-7-3-monitoring]: Is the effectiveness of Securing offices, rooms and facilities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.3  Q5 [a-7-3-review]: Is Securing offices, rooms and facilities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.4  Q1 [a-7-4-existence]: Does the organisation have an identified approach to implement Physical security monitoring (A.7.4)?
+A.7.4  Q2 [a-7-4-policy]: Is there a documented policy, standard or procedure that governs Physical security monitoring consistent with ISO 27001 A.7.4?
+A.7.4  Q3 [a-7-4-implementation]: Is Physical security monitoring implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.4  Q4 [a-7-4-monitoring]: Is the effectiveness of Physical security monitoring monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.4  Q5 [a-7-4-review]: Is Physical security monitoring reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.5  Q1 [a-7-5-existence]: Does the organisation have an identified approach to implement Protecting against physical and environmental threats (A.7.5)?
+A.7.5  Q2 [a-7-5-policy]: Is there a documented policy, standard or procedure that governs Protecting against physical and environmental threats consistent with ISO 27001 A.7.5?
+A.7.5  Q3 [a-7-5-implementation]: Is Protecting against physical and environmental threats implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.5  Q4 [a-7-5-monitoring]: Is the effectiveness of Protecting against physical and environmental threats monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.5  Q5 [a-7-5-review]: Is Protecting against physical and environmental threats reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.6  Q1 [a-7-6-existence]: Does the organisation have an identified approach to implement Working in secure areas (A.7.6)?
+A.7.6  Q2 [a-7-6-policy]: Is there a documented policy, standard or procedure that governs Working in secure areas consistent with ISO 27001 A.7.6?
+A.7.6  Q3 [a-7-6-implementation]: Is Working in secure areas implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.6  Q4 [a-7-6-monitoring]: Is the effectiveness of Working in secure areas monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.6  Q5 [a-7-6-review]: Is Working in secure areas reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.7  Q1 [a-7-7-existence]: Does the organisation have an identified approach to implement Clear desk and clear screen (A.7.7)?
+A.7.7  Q2 [a-7-7-policy]: Is there a documented policy, standard or procedure that governs Clear desk and clear screen consistent with ISO 27001 A.7.7?
+A.7.7  Q3 [a-7-7-implementation]: Is Clear desk and clear screen implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.7  Q4 [a-7-7-monitoring]: Is the effectiveness of Clear desk and clear screen monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.7  Q5 [a-7-7-review]: Is Clear desk and clear screen reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.8  Q1 [a-7-8-existence]: Does the organisation have an identified approach to implement Equipment siting and protection (A.7.8)?
+A.7.8  Q2 [a-7-8-policy]: Is there a documented policy, standard or procedure that governs Equipment siting and protection consistent with ISO 27001 A.7.8?
+A.7.8  Q3 [a-7-8-implementation]: Is Equipment siting and protection implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.8  Q4 [a-7-8-monitoring]: Is the effectiveness of Equipment siting and protection monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.8  Q5 [a-7-8-review]: Is Equipment siting and protection reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.9  Q1 [a-7-9-existence]: Does the organisation have an identified approach to implement Security of assets off-premises (A.7.9)?
+A.7.9  Q2 [a-7-9-policy]: Is there a documented policy, standard or procedure that governs Security of assets off-premises consistent with ISO 27001 A.7.9?
+A.7.9  Q3 [a-7-9-implementation]: Is Security of assets off-premises implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.9  Q4 [a-7-9-monitoring]: Is the effectiveness of Security of assets off-premises monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.9  Q5 [a-7-9-review]: Is Security of assets off-premises reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.10  Q1 [a-7-10-existence]: Does the organisation have an identified approach to implement Storage media (A.7.10)?
+A.7.10  Q2 [a-7-10-policy]: Is there a documented policy, standard or procedure that governs Storage media consistent with ISO 27001 A.7.10?
+A.7.10  Q3 [a-7-10-implementation]: Is Storage media implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.10  Q4 [a-7-10-monitoring]: Is the effectiveness of Storage media monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.10  Q5 [a-7-10-review]: Is Storage media reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.11  Q1 [a-7-11-existence]: Does the organisation have an identified approach to implement Supporting utilities (A.7.11)?
+A.7.11  Q2 [a-7-11-policy]: Is there a documented policy, standard or procedure that governs Supporting utilities consistent with ISO 27001 A.7.11?
+A.7.11  Q3 [a-7-11-implementation]: Is Supporting utilities implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.11  Q4 [a-7-11-monitoring]: Is the effectiveness of Supporting utilities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.11  Q5 [a-7-11-review]: Is Supporting utilities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.12  Q1 [a-7-12-existence]: Does the organisation have an identified approach to implement Cabling security (A.7.12)?
+A.7.12  Q2 [a-7-12-policy]: Is there a documented policy, standard or procedure that governs Cabling security consistent with ISO 27001 A.7.12?
+A.7.12  Q3 [a-7-12-implementation]: Is Cabling security implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.12  Q4 [a-7-12-monitoring]: Is the effectiveness of Cabling security monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.12  Q5 [a-7-12-review]: Is Cabling security reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.13  Q1 [a-7-13-existence]: Does the organisation have an identified approach to implement Equipment maintenance (A.7.13)?
+A.7.13  Q2 [a-7-13-policy]: Is there a documented policy, standard or procedure that governs Equipment maintenance consistent with ISO 27001 A.7.13?
+A.7.13  Q3 [a-7-13-implementation]: Is Equipment maintenance implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.13  Q4 [a-7-13-monitoring]: Is the effectiveness of Equipment maintenance monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.13  Q5 [a-7-13-review]: Is Equipment maintenance reviewed at planned intervals and after significant changes, with documented outcomes?
+A.7.14  Q1 [a-7-14-existence]: Does the organisation have an identified approach to implement Secure disposal or re-use of equipment (A.7.14)?
+A.7.14  Q2 [a-7-14-policy]: Is there a documented policy, standard or procedure that governs Secure disposal or re-use of equipment consistent with ISO 27001 A.7.14?
+A.7.14  Q3 [a-7-14-implementation]: Is Secure disposal or re-use of equipment implemented in practice across the ISMS scope (people, processes, technology)?
+A.7.14  Q4 [a-7-14-monitoring]: Is the effectiveness of Secure disposal or re-use of equipment monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.7.14  Q5 [a-7-14-review]: Is Secure disposal or re-use of equipment reviewed at planned intervals and after significant changes, with documented outcomes?
+
+============================================================
+ANNEX A — A.8 Technological controls
+============================================================
+
+A.8.1  Q1 [a-8-1-existence]: Does the organisation have an identified approach to implement User end point devices (A.8.1)?
+A.8.1  Q2 [a-8-1-policy]: Is there a documented policy, standard or procedure that governs User end point devices consistent with ISO 27001 A.8.1?
+A.8.1  Q3 [a-8-1-implementation]: Is User end point devices implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.1  Q4 [a-8-1-monitoring]: Is the effectiveness of User end point devices monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.1  Q5 [a-8-1-review]: Is User end point devices reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.2  Q1 [a-8-2-existence]: Does the organisation have an identified approach to implement Privileged access rights (A.8.2)?
+A.8.2  Q2 [a-8-2-policy]: Is there a documented policy, standard or procedure that governs Privileged access rights consistent with ISO 27001 A.8.2?
+A.8.2  Q3 [a-8-2-implementation]: Is Privileged access rights implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.2  Q4 [a-8-2-monitoring]: Is the effectiveness of Privileged access rights monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.2  Q5 [a-8-2-review]: Is Privileged access rights reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.3  Q1 [a-8-3-existence]: Does the organisation have an identified approach to implement Information access restriction (A.8.3)?
+A.8.3  Q2 [a-8-3-policy]: Is there a documented policy, standard or procedure that governs Information access restriction consistent with ISO 27001 A.8.3?
+A.8.3  Q3 [a-8-3-implementation]: Is Information access restriction implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.3  Q4 [a-8-3-monitoring]: Is the effectiveness of Information access restriction monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.3  Q5 [a-8-3-review]: Is Information access restriction reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.4  Q1 [a-8-4-existence]: Does the organisation have an identified approach to implement Access to source code (A.8.4)?
+A.8.4  Q2 [a-8-4-policy]: Is there a documented policy, standard or procedure that governs Access to source code consistent with ISO 27001 A.8.4?
+A.8.4  Q3 [a-8-4-implementation]: Is Access to source code implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.4  Q4 [a-8-4-monitoring]: Is the effectiveness of Access to source code monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.4  Q5 [a-8-4-review]: Is Access to source code reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.5  Q1 [a-8-5-existence]: Does the organisation have an identified approach to implement Secure authentication (A.8.5)?
+A.8.5  Q2 [a-8-5-policy]: Is there a documented policy, standard or procedure that governs Secure authentication consistent with ISO 27001 A.8.5?
+A.8.5  Q3 [a-8-5-implementation]: Is Secure authentication implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.5  Q4 [a-8-5-monitoring]: Is the effectiveness of Secure authentication monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.5  Q5 [a-8-5-review]: Is Secure authentication reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.6  Q1 [a-8-6-existence]: Does the organisation have an identified approach to implement Capacity management (A.8.6)?
+A.8.6  Q2 [a-8-6-policy]: Is there a documented policy, standard or procedure that governs Capacity management consistent with ISO 27001 A.8.6?
+A.8.6  Q3 [a-8-6-implementation]: Is Capacity management implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.6  Q4 [a-8-6-monitoring]: Is the effectiveness of Capacity management monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.6  Q5 [a-8-6-review]: Is Capacity management reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.7  Q1 [a-8-7-existence]: Does the organisation have an identified approach to implement Protection against malware (A.8.7)?
+A.8.7  Q2 [a-8-7-policy]: Is there a documented policy, standard or procedure that governs Protection against malware consistent with ISO 27001 A.8.7?
+A.8.7  Q3 [a-8-7-implementation]: Is Protection against malware implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.7  Q4 [a-8-7-monitoring]: Is the effectiveness of Protection against malware monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.7  Q5 [a-8-7-review]: Is Protection against malware reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.8  Q1 [a-8-8-existence]: Does the organisation have an identified approach to implement Management of technical vulnerabilities (A.8.8)?
+A.8.8  Q2 [a-8-8-policy]: Is there a documented policy, standard or procedure that governs Management of technical vulnerabilities consistent with ISO 27001 A.8.8?
+A.8.8  Q3 [a-8-8-implementation]: Is Management of technical vulnerabilities implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.8  Q4 [a-8-8-monitoring]: Is the effectiveness of Management of technical vulnerabilities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.8  Q5 [a-8-8-review]: Is Management of technical vulnerabilities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.9  Q1 [a-8-9-existence]: Does the organisation have an identified approach to implement Configuration management (A.8.9)?
+A.8.9  Q2 [a-8-9-policy]: Is there a documented policy, standard or procedure that governs Configuration management consistent with ISO 27001 A.8.9?
+A.8.9  Q3 [a-8-9-implementation]: Is Configuration management implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.9  Q4 [a-8-9-monitoring]: Is the effectiveness of Configuration management monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.9  Q5 [a-8-9-review]: Is Configuration management reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.10  Q1 [a-8-10-existence]: Does the organisation have an identified approach to implement Information deletion (A.8.10)?
+A.8.10  Q2 [a-8-10-policy]: Is there a documented policy, standard or procedure that governs Information deletion consistent with ISO 27001 A.8.10?
+A.8.10  Q3 [a-8-10-implementation]: Is Information deletion implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.10  Q4 [a-8-10-monitoring]: Is the effectiveness of Information deletion monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.10  Q5 [a-8-10-review]: Is Information deletion reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.11  Q1 [a-8-11-existence]: Does the organisation have an identified approach to implement Data masking (A.8.11)?
+A.8.11  Q2 [a-8-11-policy]: Is there a documented policy, standard or procedure that governs Data masking consistent with ISO 27001 A.8.11?
+A.8.11  Q3 [a-8-11-implementation]: Is Data masking implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.11  Q4 [a-8-11-monitoring]: Is the effectiveness of Data masking monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.11  Q5 [a-8-11-review]: Is Data masking reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.12  Q1 [a-8-12-existence]: Does the organisation have an identified approach to implement Data leakage prevention (A.8.12)?
+A.8.12  Q2 [a-8-12-policy]: Is there a documented policy, standard or procedure that governs Data leakage prevention consistent with ISO 27001 A.8.12?
+A.8.12  Q3 [a-8-12-implementation]: Is Data leakage prevention implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.12  Q4 [a-8-12-monitoring]: Is the effectiveness of Data leakage prevention monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.12  Q5 [a-8-12-review]: Is Data leakage prevention reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.13  Q1 [a-8-13-existence]: Does the organisation have an identified approach to implement Information backup (A.8.13)?
+A.8.13  Q2 [a-8-13-policy]: Is there a documented policy, standard or procedure that governs Information backup consistent with ISO 27001 A.8.13?
+A.8.13  Q3 [a-8-13-implementation]: Is Information backup implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.13  Q4 [a-8-13-monitoring]: Is the effectiveness of Information backup monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.13  Q5 [a-8-13-review]: Is Information backup reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.14  Q1 [a-8-14-existence]: Does the organisation have an identified approach to implement Redundancy of information processing facilities (A.8.14)?
+A.8.14  Q2 [a-8-14-policy]: Is there a documented policy, standard or procedure that governs Redundancy of information processing facilities consistent with ISO 27001 A.8.14?
+A.8.14  Q3 [a-8-14-implementation]: Is Redundancy of information processing facilities implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.14  Q4 [a-8-14-monitoring]: Is the effectiveness of Redundancy of information processing facilities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.14  Q5 [a-8-14-review]: Is Redundancy of information processing facilities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.15  Q1 [a-8-15-existence]: Does the organisation have an identified approach to implement Logging (A.8.15)?
+A.8.15  Q2 [a-8-15-policy]: Is there a documented policy, standard or procedure that governs Logging consistent with ISO 27001 A.8.15?
+A.8.15  Q3 [a-8-15-implementation]: Is Logging implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.15  Q4 [a-8-15-monitoring]: Is the effectiveness of Logging monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.15  Q5 [a-8-15-review]: Is Logging reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.16  Q1 [a-8-16-existence]: Does the organisation have an identified approach to implement Monitoring activities (A.8.16)?
+A.8.16  Q2 [a-8-16-policy]: Is there a documented policy, standard or procedure that governs Monitoring activities consistent with ISO 27001 A.8.16?
+A.8.16  Q3 [a-8-16-implementation]: Is Monitoring activities implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.16  Q4 [a-8-16-monitoring]: Is the effectiveness of Monitoring activities monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.16  Q5 [a-8-16-review]: Is Monitoring activities reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.17  Q1 [a-8-17-existence]: Does the organisation have an identified approach to implement Clock synchronisation (A.8.17)?
+A.8.17  Q2 [a-8-17-policy]: Is there a documented policy, standard or procedure that governs Clock synchronisation consistent with ISO 27001 A.8.17?
+A.8.17  Q3 [a-8-17-implementation]: Is Clock synchronisation implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.17  Q4 [a-8-17-monitoring]: Is the effectiveness of Clock synchronisation monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.17  Q5 [a-8-17-review]: Is Clock synchronisation reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.18  Q1 [a-8-18-existence]: Does the organisation have an identified approach to implement Use of privileged utility programs (A.8.18)?
+A.8.18  Q2 [a-8-18-policy]: Is there a documented policy, standard or procedure that governs Use of privileged utility programs consistent with ISO 27001 A.8.18?
+A.8.18  Q3 [a-8-18-implementation]: Is Use of privileged utility programs implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.18  Q4 [a-8-18-monitoring]: Is the effectiveness of Use of privileged utility programs monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.18  Q5 [a-8-18-review]: Is Use of privileged utility programs reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.19  Q1 [a-8-19-existence]: Does the organisation have an identified approach to implement Installation of software on operational systems (A.8.19)?
+A.8.19  Q2 [a-8-19-policy]: Is there a documented policy, standard or procedure that governs Installation of software on operational systems consistent with ISO 27001 A.8.19?
+A.8.19  Q3 [a-8-19-implementation]: Is Installation of software on operational systems implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.19  Q4 [a-8-19-monitoring]: Is the effectiveness of Installation of software on operational systems monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.19  Q5 [a-8-19-review]: Is Installation of software on operational systems reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.20  Q1 [a-8-20-existence]: Does the organisation have an identified approach to implement Networks security (A.8.20)?
+A.8.20  Q2 [a-8-20-policy]: Is there a documented policy, standard or procedure that governs Networks security consistent with ISO 27001 A.8.20?
+A.8.20  Q3 [a-8-20-implementation]: Is Networks security implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.20  Q4 [a-8-20-monitoring]: Is the effectiveness of Networks security monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.20  Q5 [a-8-20-review]: Is Networks security reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.21  Q1 [a-8-21-existence]: Does the organisation have an identified approach to implement Security of network services (A.8.21)?
+A.8.21  Q2 [a-8-21-policy]: Is there a documented policy, standard or procedure that governs Security of network services consistent with ISO 27001 A.8.21?
+A.8.21  Q3 [a-8-21-implementation]: Is Security of network services implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.21  Q4 [a-8-21-monitoring]: Is the effectiveness of Security of network services monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.21  Q5 [a-8-21-review]: Is Security of network services reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.22  Q1 [a-8-22-existence]: Does the organisation have an identified approach to implement Segregation of networks (A.8.22)?
+A.8.22  Q2 [a-8-22-policy]: Is there a documented policy, standard or procedure that governs Segregation of networks consistent with ISO 27001 A.8.22?
+A.8.22  Q3 [a-8-22-implementation]: Is Segregation of networks implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.22  Q4 [a-8-22-monitoring]: Is the effectiveness of Segregation of networks monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.22  Q5 [a-8-22-review]: Is Segregation of networks reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.23  Q1 [a-8-23-existence]: Does the organisation have an identified approach to implement Web filtering (A.8.23)?
+A.8.23  Q2 [a-8-23-policy]: Is there a documented policy, standard or procedure that governs Web filtering consistent with ISO 27001 A.8.23?
+A.8.23  Q3 [a-8-23-implementation]: Is Web filtering implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.23  Q4 [a-8-23-monitoring]: Is the effectiveness of Web filtering monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.23  Q5 [a-8-23-review]: Is Web filtering reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.24  Q1 [a-8-24-existence]: Does the organisation have an identified approach to implement Use of cryptography (A.8.24)?
+A.8.24  Q2 [a-8-24-policy]: Is there a documented policy, standard or procedure that governs Use of cryptography consistent with ISO 27001 A.8.24?
+A.8.24  Q3 [a-8-24-implementation]: Is Use of cryptography implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.24  Q4 [a-8-24-monitoring]: Is the effectiveness of Use of cryptography monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.24  Q5 [a-8-24-review]: Is Use of cryptography reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.25  Q1 [a-8-25-existence]: Does the organisation have an identified approach to implement Secure development life cycle (A.8.25)?
+A.8.25  Q2 [a-8-25-policy]: Is there a documented policy, standard or procedure that governs Secure development life cycle consistent with ISO 27001 A.8.25?
+A.8.25  Q3 [a-8-25-implementation]: Is Secure development life cycle implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.25  Q4 [a-8-25-monitoring]: Is the effectiveness of Secure development life cycle monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.25  Q5 [a-8-25-review]: Is Secure development life cycle reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.26  Q1 [a-8-26-existence]: Does the organisation have an identified approach to implement Application security requirements (A.8.26)?
+A.8.26  Q2 [a-8-26-policy]: Is there a documented policy, standard or procedure that governs Application security requirements consistent with ISO 27001 A.8.26?
+A.8.26  Q3 [a-8-26-implementation]: Is Application security requirements implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.26  Q4 [a-8-26-monitoring]: Is the effectiveness of Application security requirements monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.26  Q5 [a-8-26-review]: Is Application security requirements reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.27  Q1 [a-8-27-existence]: Does the organisation have an identified approach to implement Secure system architecture and engineering principles (A.8.27)?
+A.8.27  Q2 [a-8-27-policy]: Is there a documented policy, standard or procedure that governs Secure system architecture and engineering principles consistent with ISO 27001 A.8.27?
+A.8.27  Q3 [a-8-27-implementation]: Is Secure system architecture and engineering principles implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.27  Q4 [a-8-27-monitoring]: Is the effectiveness of Secure system architecture and engineering principles monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.27  Q5 [a-8-27-review]: Is Secure system architecture and engineering principles reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.28  Q1 [a-8-28-existence]: Does the organisation have an identified approach to implement Secure coding (A.8.28)?
+A.8.28  Q2 [a-8-28-policy]: Is there a documented policy, standard or procedure that governs Secure coding consistent with ISO 27001 A.8.28?
+A.8.28  Q3 [a-8-28-implementation]: Is Secure coding implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.28  Q4 [a-8-28-monitoring]: Is the effectiveness of Secure coding monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.28  Q5 [a-8-28-review]: Is Secure coding reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.29  Q1 [a-8-29-existence]: Does the organisation have an identified approach to implement Security testing in development and acceptance (A.8.29)?
+A.8.29  Q2 [a-8-29-policy]: Is there a documented policy, standard or procedure that governs Security testing in development and acceptance consistent with ISO 27001 A.8.29?
+A.8.29  Q3 [a-8-29-implementation]: Is Security testing in development and acceptance implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.29  Q4 [a-8-29-monitoring]: Is the effectiveness of Security testing in development and acceptance monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.29  Q5 [a-8-29-review]: Is Security testing in development and acceptance reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.30  Q1 [a-8-30-existence]: Does the organisation have an identified approach to implement Outsourced development (A.8.30)?
+A.8.30  Q2 [a-8-30-policy]: Is there a documented policy, standard or procedure that governs Outsourced development consistent with ISO 27001 A.8.30?
+A.8.30  Q3 [a-8-30-implementation]: Is Outsourced development implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.30  Q4 [a-8-30-monitoring]: Is the effectiveness of Outsourced development monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.30  Q5 [a-8-30-review]: Is Outsourced development reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.31  Q1 [a-8-31-existence]: Does the organisation have an identified approach to implement Separation of development, test and production environments (A.8.31)?
+A.8.31  Q2 [a-8-31-policy]: Is there a documented policy, standard or procedure that governs Separation of development, test and production environments consistent with ISO 27001 A.8.31?
+A.8.31  Q3 [a-8-31-implementation]: Is Separation of development, test and production environments implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.31  Q4 [a-8-31-monitoring]: Is the effectiveness of Separation of development, test and production environments monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.31  Q5 [a-8-31-review]: Is Separation of development, test and production environments reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.32  Q1 [a-8-32-existence]: Does the organisation have an identified approach to implement Change management (A.8.32)?
+A.8.32  Q2 [a-8-32-policy]: Is there a documented policy, standard or procedure that governs Change management consistent with ISO 27001 A.8.32?
+A.8.32  Q3 [a-8-32-implementation]: Is Change management implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.32  Q4 [a-8-32-monitoring]: Is the effectiveness of Change management monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.32  Q5 [a-8-32-review]: Is Change management reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.33  Q1 [a-8-33-existence]: Does the organisation have an identified approach to implement Test information (A.8.33)?
+A.8.33  Q2 [a-8-33-policy]: Is there a documented policy, standard or procedure that governs Test information consistent with ISO 27001 A.8.33?
+A.8.33  Q3 [a-8-33-implementation]: Is Test information implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.33  Q4 [a-8-33-monitoring]: Is the effectiveness of Test information monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.33  Q5 [a-8-33-review]: Is Test information reviewed at planned intervals and after significant changes, with documented outcomes?
+A.8.34  Q1 [a-8-34-existence]: Does the organisation have an identified approach to implement Protection of information systems during audit testing (A.8.34)?
+A.8.34  Q2 [a-8-34-policy]: Is there a documented policy, standard or procedure that governs Protection of information systems during audit testing consistent with ISO 27001 A.8.34?
+A.8.34  Q3 [a-8-34-implementation]: Is Protection of information systems during audit testing implemented in practice across the ISMS scope (people, processes, technology)?
+A.8.34  Q4 [a-8-34-monitoring]: Is the effectiveness of Protection of information systems during audit testing monitored, measured and reported (e.g. KPI, alerts, metrics, periodic tests)?
+A.8.34  Q5 [a-8-34-review]: Is Protection of information systems during audit testing reviewed at planned intervals and after significant changes, with documented outcomes?

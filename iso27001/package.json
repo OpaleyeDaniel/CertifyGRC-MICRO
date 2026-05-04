@@ -1,0 +1,11 @@
+{
+  "name": "@certifygrc/iso27001",
+  "version": "1.0.0",
+  "description": "Self-contained ISO/IEC 27001:2022 question bank and service for CertifyGRC",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build-data.mjs"
+  }
+}

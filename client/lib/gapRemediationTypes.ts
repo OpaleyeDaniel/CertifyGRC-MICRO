@@ -9,6 +9,12 @@ export interface EvidenceFile {
   size: number;
   uploadedAt: string;
   url?: string; // URL to access the file
+  sourceKind?: "local" | "cloud";
+  storageMode?: "import" | "link";
+  providerId?: string;
+  externalFileId?: string;
+  externalPath?: string;
+  attachedBy?: string;
 }
 
 export interface GapRemediation {
